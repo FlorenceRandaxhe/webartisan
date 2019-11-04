@@ -1,0 +1,12 @@
+@mixin clearfix( $w:both ){
+  &:after{
+    content: "";
+    display: block;
+    clear: $w;
+  }
+}
+
+@mixin resetFW(){
+  width: auto;
+  float: none;
+}

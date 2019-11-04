@@ -1,0 +1,35 @@
+.section__job__add{
+  @include wrapper(900px, 0);
+}
+
+.feedback__success{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .section__info--success{
+    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 2em;
+  }
+  svg{
+    width: 100%;
+  }
+  .feedback__link{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    a{
+      margin-top: 2em;
+    }
+  }
+}
+
+.mandatory__fields{
+  margin-top: 2em;
+}
+
+.input--image{
+  border-bottom: none;
+}

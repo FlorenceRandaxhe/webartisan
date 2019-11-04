@@ -1,0 +1,21 @@
+// home page tuto
+.featured__tuto{
+  background-color: #F7F7F7;
+}
+
+// page tuto
+.section__tuto{
+  @include wrapper(1000px, 0);
+  .tuto{
+    margin-bottom: 2em;
+  }
+}
+
+@media only screen and (min-width:30em){
+  .tuto__content, .tuto__link{
+    padding: 1em 1.5em;
+  }
+  .tuto__link{
+    display: block;
+  }
+}

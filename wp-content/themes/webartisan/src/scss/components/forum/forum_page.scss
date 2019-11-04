@@ -1,0 +1,32 @@
+.section__thread{
+  @include wrapper(900px, 0)
+}
+
+.trending__up{
+  stroke: $pink;
+  background-color: rgba(212, 156, 181, 0.28);
+  border-radius: 100%;
+  box-shadow: 0 0 0 rgba(212, 156, 181, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 156, 181, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+
+.thread__title{
+  a{
+    margin-right: 2em;
+  }
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}

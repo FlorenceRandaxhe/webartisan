@@ -1,0 +1,106 @@
+// animation illustration page tuto
+.illu__tuto{
+  .appear {
+    opacity: 0;
+    animation: hideshow 10s infinite;
+  }
+  .tuto_text1{
+    transform: translateX(66px) translateY(69px);
+    animation: tutotext_1 10s ease-in-out infinite;
+  }
+  .tuto_text2{
+    transform: translateX(30px) translateY(69px);
+    animation: tutotext_2 10s ease-in-out infinite;
+  }
+}
+
+@keyframes tutotext_1 {
+  0% { transform: translateX(66px) translateY(69px); }
+  50% { transform: translateX(20px) translateY(69px); }
+  0% { transform: translateX(66px) translateY(69px); }
+}
+
+@keyframes tutotext_2 {
+  0% { transform: translateX(30px) translateY(69px); }
+  50% { transform: translateX(76px) translateY(69px); }
+  0% { transform: translateX(30px) translateY(69px); }
+}
+@keyframes hideshow {
+  0% { opacity: 0; }
+  30% { opacity: 0; }
+  31% { opacity: 1; }
+  70% { opacity: 1; }
+  71% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+// animation illustration page forum
+.illu_forum{
+  .bubble_1{
+    animation: bubbleTalk_1 8s ease-in-out infinite;
+  }
+  .bubble_2{
+    animation: bubbleTalk_2 8s ease-in-out infinite;
+  }
+}
+
+@keyframes bubbleTalk_1 {
+  0%{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  25%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes bubbleTalk_2 {
+  0%{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  25%{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  45%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+
+.blog_rec{
+  animation:stroke-offset 20s ease-in infinite;
+}
+
+
+@keyframes stroke-offset {
+  0% {
+    stroke-dasharray:0 100%;
+  }
+  20%{
+    stroke-dasharray:100% 0;
+  }
+  100%{
+    stroke-dasharray:100% 0;
+  }
+}
+
+
+
+

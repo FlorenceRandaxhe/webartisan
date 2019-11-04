@@ -1,0 +1,51 @@
+.tuto__container{
+  margin-top: 2em;
+}
+.tuto{
+  background-color: $white;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $big_shadow;
+  transition: 0.3s;
+  &:hover{
+    transform: translateY(-7px);
+    box-shadow: $big_shadow_hover;
+    transition: 0.3s;
+  }
+  &:last-of-type{
+    margin-bottom: 5em;
+  }
+  &__content{
+    padding: 1em;
+    p{
+      margin: 0.25em 0;
+    }
+  }
+  &__meta{
+    color: #3e3e3e;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    >div{
+      margin-top: 0.8em;
+      margin-right: 1.2em;
+    }
+  }
+  &__link{
+    display: none;
+  }
+}
+
+@media only screen and (min-width:30em){
+  .tuto__content, .tuto__link{
+    padding: 1em 1.5em;
+  }
+  .tuto__link{
+    display: block;
+  }
+}
+

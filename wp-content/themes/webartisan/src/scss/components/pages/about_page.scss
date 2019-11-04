@@ -1,0 +1,15 @@
+.section__about{
+  @include wrapper(900px, 0);
+  p{
+    padding-bottom: 1em;
+  }
+  h2, h3, h4{
+    padding: 20px 0 10px 0;
+  }
+}
+.about__container{
+  padding: 3em;
+  background-color: #f8fafb;
+  border-radius: 3px;
+
+}

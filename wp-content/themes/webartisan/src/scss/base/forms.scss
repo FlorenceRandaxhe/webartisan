@@ -1,0 +1,35 @@
+// formulaires
+input, select{
+  border: none;
+  border-bottom: 1px solid $darkBlue;
+  padding: 0.5em 1em;
+  border-radius: 2px 2px 0 0;
+  background-color: transparent;
+  font-size: 1em;
+  font-family: $worksans;
+  &::placeholder{
+    color: $darkBlue;
+  }
+  &:focus{
+    background-color: rgba(255, 255, 255, 0.25);
+    outline: none;
+  }
+}
+legend{font-weight: 500}
+textarea{
+  border: 1px solid $darkBlue;
+  padding: 0.5em 1em;
+  height: 200px;
+  font-size: 1em;
+  font-family: $worksans;
+  border-radius: 3px;
+  &:focus{
+    outline: none;
+    background-color: #f2f4f9;
+  }
+}
+
+button{
+  cursor: pointer;
+}
+

@@ -1,0 +1,31 @@
+.section__taxo{
+  @include wrapper(1300px, 0);
+  .taxo__content{
+    padding: 2em 0;
+  }
+  .taxo__container{
+    margin: 0 auto;
+    max-width: 620px;
+    transition: 0.3s;
+    &:hover{
+      transform: translateY(-5px);
+      transition: 0.3s;
+    }
+    @include mq('tablet'){
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+  .post__excerpt{
+    font-size: 16px;
+  }
+  .post__author{
+    margin: 0.2em 0 0.5em;
+  }
+}
+
+@media only screen and (min-width:60em) {
+  .taxo__container{
+    margin: 0;
+  }
+}

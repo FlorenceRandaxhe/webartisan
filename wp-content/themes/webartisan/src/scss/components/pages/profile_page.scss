@@ -1,0 +1,42 @@
+.section__profile{
+  max-width: 75em;
+  margin: 0 auto 5em;
+}
+.profile__container{
+  margin: 0 auto;
+  width: 90%;
+  @include mq('tablet'){
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+.profile__form{
+  padding-top: 30px;
+  width:100%;
+
+}
+.profile__info{
+  padding: 30px;
+  box-shadow: $big_shadow_hover;
+  border-radius: 4px;
+  text-align: center;
+  @include mq('tablet'){
+    min-width: 400px;
+    margin-right: 5em;
+  }
+  div{
+    margin: 2em auto;
+  }
+  li{
+    padding-bottom: 1em;
+  }
+  &__name{
+    font-size: 20px;
+  }
+  .text--bold{
+    font-size: 20px;
+    font-weight: 500;
+    display: block;
+  }
+}

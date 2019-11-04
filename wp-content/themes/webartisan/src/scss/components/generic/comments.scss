@@ -1,0 +1,55 @@
+// comment list
+.post-comments{
+  .comment{
+    padding:1.5em;
+    margin-bottom: 1.5em;
+    background-color: #f8fafb;
+    border-radius: 3px;
+    &__content{
+      @include mq('tablet'){
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        &__body{
+          flex: 1;
+        }
+      }
+      &__img{
+        text-align: center;
+        margin-bottom: 2em;
+        @include mq('tablet'){
+          margin-right: 1.5em;
+        }
+        img{
+          border-radius: 100%;
+        }
+      }
+      &__reply{
+        text-align: right;
+        a{
+          border: 1px solid $darkBlue;
+          padding: 5px 10px;
+          transition: 0.3s;
+          &:hover{
+            transition: 0.3s;
+            box-shadow: $small_shadow;
+          }
+        }
+      }
+    }
+  }
+  .comment__meta{
+    padding-bottom: 0.5em;
+    &__author{
+      font-weight: 500;
+      font-size: 18px;
+    }
+    &__date{
+      font-size: 13px;
+      color: #3e3e3e;
+      text-align: right;
+    }
+  }
+}
+
+

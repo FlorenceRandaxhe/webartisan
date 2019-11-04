@@ -1,0 +1,46 @@
+// pseudo elements
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// wrapper
+@mixin wrapper($width, $margin){
+    width: 90%;
+    max-width: $width;
+    margin: $margin auto;
+}
+
+// font style
+@mixin font($size: false, $colour: false, $weight: false,  $lh: 1.2) {
+    font-family: $worksans;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+}
+
+
+// media queries 
+$breakpoints: (
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  1024px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px,
+    "mega-wide":    1700px
+);
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}

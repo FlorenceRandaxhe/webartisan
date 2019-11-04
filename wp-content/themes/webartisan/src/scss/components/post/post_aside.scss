@@ -1,0 +1,35 @@
+// aside
+.aside__container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  @include mq('tablet-wide'){
+    flex-direction: column;
+  }
+}
+.aside__content{
+  max-width: 150px;
+  margin-top: 1.5em;
+  margin-right: 1em;
+  @include mq('tablet-wide'){
+    max-width: 400px;
+    display: flex;
+    align-items: flex-start;
+    .img__container{
+      margin-right: 1em;
+    }
+  }
+}
+
+.post__aside{
+  flex: 1;
+  margin-top: 5em;
+  @include mq('tablet-wide'){
+    margin-top: 0;
+    margin-left: 3em;
+    max-width: 400px;
+  }
+}
+

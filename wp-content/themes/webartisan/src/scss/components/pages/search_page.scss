@@ -1,0 +1,59 @@
+.section__search{
+  @include wrapper(1000px, 2em);
+}
+.search__content{
+  .featured__section__title{
+    padding-bottom: 10px;
+    @include font(25px, $black, 500);
+  }
+  background-color: $white;
+  box-shadow: $big_shadow_hover;
+  border-radius: 3px;
+  padding: 2em;
+  &__results{
+    padding: 1.2em;
+    display: flex;
+    align-items: flex-start;
+    &:hover{
+      background-color: #f1f3f4;
+      border-radius: 3px;
+    }
+    .tags{
+      margin-top: 1em;
+    }
+  }
+}
+.post__type{
+  margin-right: 2em;
+  min-width: 120px;
+}
+.search__result__meta{
+  display: flex;
+}
+.search__result__date{
+  margin-right: 1em;
+}
+
+.category--articles{
+  text-align: center;
+  background-color: $yellow;
+  padding: 1px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.category--tutoriels{
+  text-align: center;
+  background-color: $blue;
+  padding: 1px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.category--forum{
+  text-align: center;
+  background-color: $pink;
+  padding: 1px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}

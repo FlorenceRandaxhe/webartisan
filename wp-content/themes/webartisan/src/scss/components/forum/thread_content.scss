@@ -1,0 +1,60 @@
+//single thread page
+.section__single__thread{
+  @include wrapper(1000px, 0);
+
+}
+.single__post__main{
+  padding:1em;
+  background-color: $white;
+  box-shadow: $small_shadow;
+}
+.thread__respond .comment:nth-child(even){
+  background-color: $white;
+}
+
+.single__thread__main{
+  padding: 1em;
+  margin-top: 2em;
+  margin-bottom: 3em;
+  border-radius: 3px;
+  box-shadow: $big_shadow;
+  @include mq('tablet'){
+    display: flex;
+  }
+  .thread__author{
+    font-weight: 500;
+  }
+  p{
+    padding-bottom: 0.5em;
+  }
+}
+.single__thread__meta{
+  margin-right: 2em;
+}
+.thread__img{
+  text-align: center;
+  img{
+    border-radius: 100%;
+  }
+}
+
+.must-log-in{
+  display: none;
+}
+
+.syntax__codes{
+  p{
+    font-size: 18px;
+    padding-bottom: 0.5em;
+  }
+  ul{
+    margin-left: 2em;
+  }
+  &__item{
+    list-style: disc;
+    padding-bottom: 5px;
+    span{
+      font-weight: 500;
+    }
+  }
+}

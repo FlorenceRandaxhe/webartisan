@@ -1,0 +1,26 @@
+.section__info--alert{
+  border: 2px solid #B03636;
+  background-color: #F9EBEB;
+  padding: 0.5em 1em;
+  margin: 1em 0 0.3em;
+  border-radius: 3px;
+  p{
+    font-weight: 600;
+    color: #B03636;
+  }
+}
+
+.thread_resolved--alert{
+  background-color: #c5ecdc;
+  padding: 1em;
+  border-radius: 3px;
+  border: 2px solid $green;
+  margin-bottom: 2em;
+}
+
+.thread_resolved{
+  background-color: #c5ecdc;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  border: 2px solid $green;
+}

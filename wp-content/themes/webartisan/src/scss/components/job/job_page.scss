@@ -1,0 +1,25 @@
+// page job
+.section__jobs{
+  @include wrapper(1100px, 0)
+}
+@media only screen and (min-width:60em){
+  .section__jobs__content{
+    margin-top: 3em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .jobs__list{
+    margin-right: 2em;
+  }
+}
+.jobs__list{
+  flex: 1;
+}
+.jobs__container{
+  width: 100%;
+  margin-right: 3em;
+}
+
+

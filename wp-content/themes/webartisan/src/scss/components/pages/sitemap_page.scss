@@ -1,0 +1,17 @@
+.section__map{
+  @include wrapper(900px, 0);
+}
+
+.map__container{
+  padding: 3em;
+  border-radius: 3px;
+  background-color: $white;
+  box-shadow: $big_shadow_hover;
+  ul{
+    margin: 2em 0 0 2em;
+    li{
+      list-style: disc;
+      padding: 5px 0;
+    }
+  }
+}

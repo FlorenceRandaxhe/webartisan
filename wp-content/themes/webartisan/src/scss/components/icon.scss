@@ -1,0 +1,28 @@
+.icon__align{
+  svg{
+    margin-right: 0.5em;
+  }
+  display: flex;
+  align-items: center;
+}
+
+// home comment icon
+.comments__count{
+  display: flex;
+  align-items: center;
+  svg{
+    margin-right: 0.2em;
+    stroke: #8b8b8b;
+    transition: 0.3s;
+  }
+  p{
+    color:#555555;
+    font-size: 18px;
+  }
+  &:hover svg{
+    fill:#8b8b8b ;
+    transition: 0.3s;
+  }
+}
+
+.cls-1{fill: rgba(212, 156, 181, 0.68);}  .cls-2{fill:none;stroke:#7c4762;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}

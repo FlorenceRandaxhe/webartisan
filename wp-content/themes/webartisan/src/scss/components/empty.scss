@@ -1,0 +1,33 @@
+// no post-type
+.section__empty{
+  margin: 0 auto;
+  text-align: center;
+  div{
+    margin-top: 1em;
+  }
+  &--blog{
+    margin-top: 15em;
+  }
+  &--thread div {
+    margin-bottom: 2em;
+  }
+}
+
+.section__jobs .section__empty{
+  a{
+    border-bottom: 1px solid $darkBlue;
+    transition: 0.3s;
+    padding: 0 2px;
+    &:hover{
+      color: $white;
+      background-color: $darkBlue;
+      transition: 0.3s;
+    }
+  }
+}
+
+// no comment
+.comments__empty{
+  margin: 1em 0;
+  font-size: 18px;
+}

@@ -1,0 +1,35 @@
+
+/**********************/
+// main
+aside{
+  margin: 2em 0 3em;
+
+}
+
+img{
+  border-radius: 3px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button{
+  cursor: pointer;
+}
+
+// footer + header
+header, footer{
+  padding: 0 5%;
+  @include mq('mega-wide') {
+    padding: 0 15%;
+  }
+}
+
+div.syntaxhighlighter{
+  border-radius: 3px;
+}
+div.padd{
+  padding: 1em !important;
+}

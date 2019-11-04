@@ -1,0 +1,38 @@
+.featured__posts{
+  margin-bottom: 4em;
+  padding: 0 5% 4em;
+  @include mq('mega-wide') {
+    padding: 0 15% 4em;
+  }
+}
+.featured__tuto{
+  margin-bottom: 4em;
+  padding: 3em 5% 6em;
+  @include mq('mega-wide') {
+    padding: 3em 15% 6em;
+  }
+}
+.featured__thread {
+  margin-bottom: 4em;
+  padding: 3em 5% 6em;
+  @include mq('desktop') {
+    padding: 3em 15% 6em;
+  }
+  @include mq('mega-wide') {
+    padding: 3em 20% 6em;
+  }
+
+  &__head {
+    @include mq ('tablet') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    div {
+      margin-top: 2em;
+      @include mq ('tablet') {
+        margin-top: 0;
+      }
+    }
+  }
+}

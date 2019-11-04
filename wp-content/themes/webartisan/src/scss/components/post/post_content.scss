@@ -1,0 +1,13 @@
+// single post
+.section__single__post{
+  @include wrapper(1250px, 0);
+  .post__flex{
+    @include mq('tablet-wide'){
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .post__main{
+    flex: 2;
+  }
+}

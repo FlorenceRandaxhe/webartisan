@@ -1,0 +1,62 @@
+.post__more, .post__other{
+  margin: 2em 0 4em;
+}
+
+// related articles
+.post__more{
+  p{
+    color: #4F4F4F;
+    max-width: 500px;
+  }
+  &__container{
+    margin: 2em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: $big_shadow;
+    padding: 2em;
+    transition: 0.3s;
+    &:hover{
+      transform: translateY(-10px);
+      box-shadow: $big_shadow_hover;
+      transition: 0.3s;
+    }
+  }
+  .meta__info{
+    margin-top: 0.5em;
+    display: flex;
+    align-items: flex-end;
+  }
+  .difficulty__container{
+    margin-right: 2em;
+  }
+  .difficulty{
+    width: 25px;
+    height: 4px;
+    background-color: #ACADAE;
+    margin-top: 4px;
+    border-radius: 3px;
+  }
+}
+// ressources
+.post__other{
+  .post__other__container{
+    padding: 1em 0;
+  }
+  .more__list__item{
+    padding: 0.25em 1em;
+  }
+  svg{
+    stroke:#4F4F4F;
+    margin-right: 0.25em;
+  }
+// RESPONSIVE PAS OK !!!!!
+  .button__more--arrow{
+    font-size: 16px;
+    &:after{
+      background-size: 50% 100%;
+    }
+  }
+
+}

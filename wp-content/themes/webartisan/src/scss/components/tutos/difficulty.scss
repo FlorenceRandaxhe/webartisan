@@ -1,0 +1,29 @@
+.difficulty__container{
+  display: flex;
+  align-items: flex-end;
+}
+.difficulty__icon{
+  margin-right: 0.5em;
+  &__intermediate, &__hard{
+    div:nth-child(2){
+      background-color: $yellow;
+    }
+  }
+  &__hard{
+    div:first-of-type{
+      background-color: $red;
+    }
+  }
+}
+.difficulty:not(:first-of-type){
+  margin-top: 4px;
+}
+.difficulty{
+  width: 30px;
+  height: 5px;
+  background-color: #d1d2d3;
+  border-radius: 3px;
+  &:last-of-type{
+    background-color: #93d8ae;
+  }
+}

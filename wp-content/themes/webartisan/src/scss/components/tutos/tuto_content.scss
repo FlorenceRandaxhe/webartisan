@@ -1,0 +1,14 @@
+// single tuto
+.section__single__tuto{
+  @include wrapper(850px, 0);
+  .difficulty__container{
+    margin-right: 2em;
+  }
+  .tuto__meta{
+    margin-bottom: 2em;
+  }
+  .tuto__excerpt{
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
