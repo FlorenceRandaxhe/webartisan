@@ -35,7 +35,8 @@ class ForumFormController
     {
         $values = $this->validate();
 
-        if (!$this->errors) {
+        if (!$this->errors)
+        {
             $this->save($values);
         }
     }

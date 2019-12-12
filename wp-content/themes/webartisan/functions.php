@@ -175,9 +175,31 @@ if( $_POST['wa_password_form'] ?? false === wa_change_password_form() )
 
     if ( !$newPassword->errors )
     {
-        wp_redirect( home_url(). $_SERVER['REQUEST_URI'] );exit;
+        wp_redirect( home_url(). $_SERVER['REQUEST_URI'] . '/?psw=success');exit;
     }
 }
+
+/***************************************************
+ *
+ * Handle email change
+ */
+function wa_change_mail_form()
+{
+    return'dw-mail-form-user';
+}
+
+if( $_POST['wa_mail_form'] ?? false === wa_change_mail_form() )
+{
+    require 'Classes/MailChangeController.php';
+    $newMail = new MailChangeController( $_POST );
+    $_SESSION['changemail'] = $newMail;
+
+    if ( !$newMail->errors )
+    {
+        wp_redirect( home_url(). $_SERVER['REQUEST_URI'] . '/?mail=success');exit;
+    }
+}
+
 
 
 function wa_show_admin_bar()

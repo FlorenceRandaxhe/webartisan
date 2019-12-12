@@ -8,11 +8,12 @@ html {
 
 body{
   font-family: $worksans;
-  font-size: 16px;
+  font-size: $font_base;
   color: $black;
   background-color: $white;
-  margin: 0 auto;
-  line-height: 1.5;
+  line-height: $line_height;
+  @include push--auto;
+  max-width: 2500px;
 }
 
 header{

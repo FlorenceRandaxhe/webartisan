@@ -9,7 +9,17 @@
     color: #B03636;
   }
 }
-
+.section__success{
+  border: 2px solid #94be85;
+  background-color: #bddcb3;
+  padding: 0.5em 1em;
+  margin: 1em 0 0.3em;
+  border-radius: 3px;
+  p{
+    font-weight: 600;
+    color: #466d43;
+  }
+}
 .thread_resolved--alert{
   background-color: #c5ecdc;
   padding: 1em;
@@ -19,6 +29,7 @@
 }
 
 .thread_resolved{
+  font-size: 18px;
   background-color: #c5ecdc;
   padding: 0.2em 0.5em;
   border-radius: 3px;

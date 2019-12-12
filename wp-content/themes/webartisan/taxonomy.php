@@ -5,7 +5,7 @@
 get_header();
 
 ?>
-    <main class="taxo main--top main--bottom">
+    <main class="taxo main--top-mid main--bottom">
         <section class="section__taxo">
             <h2 aria-level="2" role="heading" class="featured__section__title">
                 Categorie&nbsp;: <?php single_cat_title(); ?>
@@ -54,7 +54,16 @@ get_header();
                 <?php endwhile;?>
                 </div>
                     <div class="pagination_links">
-                        <?php echo paginate_links(); ?>
+                        <?php
+                        global $wp_query;
+                        $big = 999999999;
+                        echo paginate_links( array(
+                            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                            'format' => '?paged=%#%',
+                            'current' => max( 1, get_query_var('paged') ),
+                            'total' => $wp_query->max_num_pages
+                        ) );
+                        ?>
                     </div>
             <?php endif; ?>
         </section>

@@ -7,9 +7,10 @@ get_header();
 ?>
     <main class="single__thread main--top-mid main--bottom">
         <?php if ( have_posts() ) :?>
+        <section class="section__single__thread">
             <h2 aria-level="2" role="heading" class="sr_only">Toutes les réponses au sujet</h2>
             <?php while ( have_posts() ) : the_post(); ?>
-                <section class="section__single__thread">
+
                 <?php if( get_field('thread_resolved') == false && is_user_logged_in() && get_the_author_meta( 'ID' ) === get_current_user_id() ) :?>
                     <div class="is__thread__resolved">
                         <form action="#" method="post" class="is__thread__resolved__form">
@@ -19,7 +20,7 @@ get_header();
                                 <label for="thread_resolved" class="form__label">Y a-t'il eu une réponse satisfaisante à votre question&nbsp;?</label>
                             </div>
                             <div class="resolved__form__submit">
-                                <button class="button--blue">Sujet résolu</button>
+                                <button class="button--green">Sujet résolu</button>
                             </div>
                         </form>
                     </div>
@@ -52,7 +53,7 @@ get_header();
                         <?php endif;?>
                         <div class="comments__count">
                             <a class="icon__align" href="<?php the_permalink(); ?>#anchor__comment">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b8b8b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b8b8b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                                 <span><?= wp_count_comments(get_the_ID())->approved; ?></span>
                             </a>
                         </div>
@@ -73,7 +74,7 @@ get_header();
                             </div>
                         </div>
                     </div>
-                    <div id="anchor__comment" class="thread__respond post__comment--width">
+                    <section id="anchor__comment" class="thread__respond post__comment--width">
 
                         <div class="post__comment__container">
 
@@ -112,8 +113,8 @@ get_header();
                                 </div>
                             <?php endif;?>
                         </div>
-                    </div>
-             </section>
+                    </section>
+            </section>
 
             <div class="thread_aside">
                 <aside>
@@ -136,7 +137,7 @@ get_header();
                     <h2 aria-level="2" role="heading" class="aside__title">Les derniers sujets de la même catégorie</h2>
                     <div class="thread_aside__container">
                         <?php while ( $cat->have_posts() ) : $cat->the_post(); ?>
-                            <div class="thread_aside__content">
+                            <article class="thread_aside__content">
                                 <div>
                                     <h3 aria-level="3" role="heading" class="aside__post__title">
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -151,7 +152,7 @@ get_header();
                                         Voir le sujet<span class="sr_only"> <?php the_title(); ?></span>
                                     </a>
                                 </div>
-                            </div>
+                            </article>
                         <?php endwhile; endif; ?>
                     </div>
                 </aside>

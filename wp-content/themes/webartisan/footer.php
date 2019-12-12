@@ -8,7 +8,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56"><g transform="translate(0 56) rotate(-90)"><g transform="translate(56) rotate(90)" fill="#fff" stroke="#1D2A34" stroke-width="2"><circle class="button__svg" cx="28" cy="28" r="27" fill="none"/></g><g transform="translate(20 16)"><path class="arrow--white" d="M-12,0H7.73" transform="translate(9.27 12)" fill="none" stroke="#1D2A34" stroke-linecap="round" stroke-width="2"/><path class="arrow--white" d="M12,6l7,6-7,6" fill="none" stroke="#1D2A34" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></g></svg>
 			</a>
 		</div>
-		<div class="footer__top">
+		<section class="footer__top">
 			<h2 aria-level="2" role="heading" class="footer__title">
 				Abonnez-vous à notre newsletter pour ne rien louper de l'actualité du web&nbsp;!
 			</h2>
@@ -18,10 +18,10 @@
 						<span class="sr_only">Email</span>
 					</label>
 					<input class="input__newsletter" type="email" name="newsletter__email" id="newsletter__email" placeholder="Entrez-votre email">
-                    <button class="button_newsletter button--blue">S'abonner</button>
+                    <button class="button_newsletter button--blue">S'abonner<span class="sr_only"> à la newsletter</span></button>
                 </form>
 			</div>
-		</div>
+		</section>
 		<div class="footer__bottom">
 			<nav class="footer__nav">
 				<h2 aria-level="2" role="heading" class="sr_only">Navigation secondaire</h2>

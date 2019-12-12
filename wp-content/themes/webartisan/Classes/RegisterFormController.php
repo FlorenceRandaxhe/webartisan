@@ -41,8 +41,9 @@ class RegisterFormController
     {
         $values = $this->validate();
 
-        if (!$this->errors) {
-            $this->save($values);
+        if ( !$this->errors )
+        {
+            $this->save( $values );
         }
     }
 
@@ -55,6 +56,7 @@ class RegisterFormController
     {
         $values  = [];
         $values['user_login'] = $this->check_valid('user_login');
+        $values['user_login'] = $this->check_username('user_login');
         $values['conf_user_password'] = $this->check_valid('conf_user_password');
         $values['user_email'] = $this->check_email('user_email');
         $values['user_password'] = $this->check_valid_password('user_password');
@@ -84,10 +86,19 @@ class RegisterFormController
             $this->errors[$attribute] = 'Veuillez confirmer votre mot de passe';
             return null;
         }
-
         $this->errors[$attribute] = 'Veuillez fournir une valeur pour ce champs';
         return null;
 
+    }
+
+    protected function check_username($attribute)
+    {
+        if (username_exists($this->input[$attribute]))
+        {
+            $this->errors[$attribute] = 'Ce nom d\'utilisateur est déjà utilisé';
+            return null;
+        }
+        return htmlspecialchars($this->input[$attribute]);
     }
 
     /**
@@ -173,6 +184,5 @@ class RegisterFormController
     protected function save($values)
     {
         wp_create_user( $values['user_login'], $values['user_password'], $values['user_email'] );
-
     }
 }

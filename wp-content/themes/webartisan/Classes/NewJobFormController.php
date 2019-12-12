@@ -11,14 +11,12 @@ class NewJobFormController
 
     /**
      * The encountered validation errors
-     *
      *@var array
      */
     public $errors = [];
 
     /**
      * Create a new controller instance
-     *
      *@param array $input
      */
     function __construct($input)
@@ -30,12 +28,12 @@ class NewJobFormController
     /**
      *Bootstrap the validation & saving of sent data
      */
-
     protected function handle()
     {
         $values = $this->validate();
 
-        if (!$this->errors) {
+        if (!$this->errors)
+        {
             $this->save($values);
         }
     }
@@ -44,7 +42,6 @@ class NewJobFormController
      * Validate the required data
      * @return array
      */
-
     protected function validate()
     {
         $values  = [];
@@ -130,7 +127,8 @@ class NewJobFormController
      */
     protected function check_img($attribute)
     {
-        if( empty( $this->input[$attribute] ) ){
+        if( empty( $this->input[$attribute] ) )
+        {
             $this->errors[$attribute] = 'Veuillez choisir une image';
             return null;
         }
@@ -138,7 +136,7 @@ class NewJobFormController
         return $this->input[$attribute];
     }
 
-    
+
     /**
      * Save the given values using the post_type
      *@param array $values

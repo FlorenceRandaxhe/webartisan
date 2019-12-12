@@ -20,6 +20,57 @@
     @if $weight { font-weight: $weight; }
 }
 
+// center element
+@mixin push--auto
+{
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+
+
+/***********************************************************
+ * Placeholder style
+ */
+@mixin input-placeholder
+{
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+/***********************************************************
+ *
+ * Hide from both screenreaders and browsers
+ */
+@mixin hidden
+{
+    display: none;
+    visibility: hidden;
+}
+
+/**********************************************************
+ *
+ * Hide from browsers but not from screen readers
+ */
+@mixin sro
+{
+    position: absolute;
+    top: -9999px;
+    font-size: 0;
+    text-indent: -9999px;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    letter-spacing: 0;
+}
+
+
 
 // media queries 
 $breakpoints: (
@@ -44,3 +95,39 @@ $breakpoints: (
         }
     }
 }
+
+// animation
+@mixin keyframes($animation-name)
+{
+    @-webkit-keyframes #{$animation-name}
+    {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name}
+    {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name}
+    {
+        @content;
+    }
+    @-o-keyframes #{$animation-name}
+    {
+        @content;
+    }
+    @keyframes #{$animation-name}
+    {
+        @content;
+    }
+}
+
+@mixin animation($str)
+{
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+
+$timing: 0.3s;

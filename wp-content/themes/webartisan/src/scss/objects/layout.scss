@@ -1,6 +1,6 @@
 .home, .blog{
   @include mq('tablet-wide'){
-    margin-top: -6em;
+    margin-top: 2em;
   }
 }
 
@@ -8,7 +8,7 @@
   margin-top: 10em;
 }
 .main--top-mid{
-  margin-top: 5em;
+  margin-top:7em;
 }
 
 .main--bottom{
@@ -19,9 +19,9 @@
     .grid__parent {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      grid-column-gap: 25px;
-      grid-row-gap: 30px;
+      grid-template-rows: 1fr;
+      grid-column-gap: 50px;
+      grid-row-gap: 50px;
     }
 
     .grid__child:first-of-type { grid-area: 1 / 1 / 2 / 3;
@@ -137,4 +137,26 @@
     .b{grid-area: b}
     .c{grid-area: c}
   }
+}
+
+
+// profile page
+.profile__container{
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  grid-template-areas: "a" "b" "c" ;
+  @include mq('tablet'){
+    grid-template-areas: "a a" "b c" ;
+  }
+}
+
+.profile__info{
+  grid-area: a;
+}
+.profile__form--info{
+  grid-area: b;
+}
+.profile__form--pass{
+  grid-area: c;
 }

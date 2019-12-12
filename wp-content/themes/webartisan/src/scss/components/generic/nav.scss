@@ -31,14 +31,12 @@
   opacity: 0;
   transition: 0.4s ease-in-out;
 }
-.member li{
-  padding:1.125em;
+.member a{
+  padding: 1em 2.5em;
+  display: block;
   &:hover{
     background-color: #f2f4f9;
   }
-}
-.member a{
-  padding: 1em 3em 1em 0;
 }
 
 /***********************************/
@@ -83,22 +81,41 @@
 
 
 // burger menu mobile version
-.burger__menu{
+.bar{
   display: block;
   background-color: $black;
   border-radius: 3px;
-  width: 40px;
+  width: 28px;
   height: 5px;
   margin-bottom: 0.3em;
+  transform-origin: left;
+  transition: all 0.5s;
 }
-.burger__menu:nth-child(3){
-  width: 30px;
-  transition: 0.3s;
+
+.menu_icon:hover .top {
+  transform: rotate(45deg);
 }
-.menu_icon:hover .burger__menu:nth-child(3){
-  width: 40px;
-  transition: 0.3s;
+
+.menu_icon:hover .middle {
+  opacity: 0;
 }
+
+.menu_icon:hover .bottom {
+  transform: rotate(-45deg);
+}
+
+#menu:checked ~ .menu_icon.top {
+  transform: rotate(45deg);
+}
+
+#menu:checked ~ .menu_icon.middle {
+  opacity: 0;
+}
+
+#menu:checked ~ .menu_icon.bottom {
+  transform: rotate(-45deg);
+}
+
 .menu{
   display: block;
   position: absolute;
@@ -116,38 +133,37 @@
   }
   .head__nav{
     position: absolute;
+    padding-top: 2em;
     left: 50%;
-    top: 110px;
+    top: 0;
     opacity: 0;
-    width: 320px;
-    height:400px ;
-    background-color: #1c1c1c;
-    border-radius: 3px;
+    width: 100vw;
+    height:450px;
+    background-color: $white;
     transform: translateX(-50%) translateY(-100vh);
     transition: 0.4s;
     z-index: 1;
     .nav__link{
-      color: $white;
+      color: $black;
       &--current:after{
-        background-color: $white;
+        background-color: $black;
       }
     }
     svg{
-      stroke:$white;
+      stroke:$black;
     }
     input{
-      border-bottom-color: $white;
+      border-bottom-color: $black;
       &::placeholder{
-        color: $white;
+        color: $black;
       }
     }
     .nav__link:hover:after, .nav__link:focus:after{
-      background-color: $white;
+      background-color: $black;
     }
   }
   #menu:checked ~ .head__nav {
     transform: translateX(-50%) translateY(0);
-    position: fixed;
     opacity: 1;
     transition: 0.4s ease-in-out;
   }

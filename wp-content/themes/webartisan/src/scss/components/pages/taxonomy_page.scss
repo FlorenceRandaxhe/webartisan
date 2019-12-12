@@ -6,11 +6,6 @@
   .taxo__container{
     margin: 0 auto;
     max-width: 620px;
-    transition: 0.3s;
-    &:hover{
-      transform: translateY(-5px);
-      transition: 0.3s;
-    }
     @include mq('tablet'){
       display: flex;
       align-items: flex-start;

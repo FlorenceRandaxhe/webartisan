@@ -69,10 +69,9 @@ get_header();
                         </section>
                     <?php endif; ?>
 
-                    <div id="anchor__comment" class="post__comment post__comment--width">
+                    <section id="anchor__comment" class="post__comment post__comment--width">
                         <h2 aria-level="2" role="heading">Commentaires</h2>
                         <div class="post__comment__container">
-                            <?php if( is_user_logged_in()):?>
                                 <div class="comments__wp">
                                     <?php if ( wp_count_comments( get_the_ID() )->approved == 0 ):?>
                                         <div class="comments__empty">
@@ -81,7 +80,6 @@ get_header();
                                     <?php endif;?>
                                     <?php comments_template( '/regular-comments.php' ); ?>
                                 </div>
-                            <?php endif;?>
                             <?php if( ! is_user_logged_in()):?>
                                 <div class="section__info section__info--alert">
                                     <p>Vous devez êter connecté pour répondre</p>
@@ -97,11 +95,11 @@ get_header();
                                 </div>
                             <?php endif;?>
                         </div>
-                    </div>
+                    </section>
                 </div>
                 <div class="post__aside">
-                    <aside>
 
+                    <aside>
                         <?php
                         $latest = new WP_Query( [
                             'post_type'         => 'articles',
@@ -114,7 +112,7 @@ get_header();
                         <h2 aria-level="2" role="heading" class="aside__title">Les derniers articles</h2>
                         <div class="aside__container">
                             <?php while ($latest->have_posts()) : $latest->the_post(); ?>
-                            <div class="aside__content">
+                            <article class="aside__content">
                                 <?php if ( has_post_thumbnail() ): ?>
                                     <div class="img__container">
                                         <figure>
@@ -127,16 +125,15 @@ get_header();
                                     <h3 aria-level="3" role="heading" class="aside__post__title">
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     </h3>
-                                    <div>
+                                    <div class="post__author">
                                         <?php the_author_posts_link(); ?>
                                     </div>
                                 </div>
-                            </div>
+                            </article>
                         <?php endwhile; endif; ?>
                         </div>
                     </aside>
                     <aside>
-
                         <?php
                         $author = new WP_Query( [
                             'author'            => get_the_author_meta( 'ID' ),
@@ -150,7 +147,7 @@ get_header();
                         <h2 aria-level="2" role="heading" class="aside__title">Du même auteur</h2>
                         <div class="aside__container">
                             <?php while ($author->have_posts()) : $author->the_post(); ?>
-                            <div class="aside__content">
+                            <article class="aside__content">
                                 <?php if ( has_post_thumbnail() ): ?>
                                     <div class="img__container">
                                         <figure>
@@ -163,11 +160,11 @@ get_header();
                                     <h3 aria-level="3" role="heading" class="aside__post__title">
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     </h3>
-                                    <div>
+                                    <div class="post__author">
                                         <?php the_author_posts_link(); ?>
                                     </div>
                                 </div>
-                            </div>
+                            </article>
                         <?php endwhile; endif; ?>
                         </div>
                     </aside>
@@ -189,7 +186,7 @@ get_header();
                         <h2 aria-level="2" role="heading" class="aside__title">De la même catégorie</h2>
                         <div class="aside__container">
                         <?php while ($cat->have_posts()) : $cat->the_post(); ?>
-                            <div class="aside__content">
+                            <article class="aside__content">
                                 <?php if ( has_post_thumbnail() ): ?>
                                     <div class="img__container">
                                         <figure>
@@ -202,11 +199,11 @@ get_header();
                                     <h3 aria-level="3" role="heading" class="aside__post__title">
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     </h3>
-                                    <div>
+                                    <div class="post__author">
                                         <?php the_author_posts_link(); ?>
                                     </div>
                                 </div>
-                            </div>
+                            </article>
                         <?php endwhile; endif; ?>
                         </div>
                     </aside>

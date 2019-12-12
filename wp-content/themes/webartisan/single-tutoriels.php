@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 get_header();
 
@@ -51,7 +51,7 @@ get_header();
                 <section class="post__more">
                     <h2 aria-level="2" role="heading" class="">Pour aller plus loin</h2>
                     <?php foreach( $related_posts as $related_post): ?>
-                        <div class="post__more__container">
+                        <article class="post__more__container">
                             <div>
                                 <div>
                                     <h3 aria-level="3" role="heading"><?= get_the_title($related_post->ID); ?></h3>
@@ -65,7 +65,7 @@ get_header();
                                     <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56"><g  transform="translate(56) rotate(90)"  stroke="#000" stroke-width="2"><circle class="button__svg" cx="28" cy="28" r="27" fill="none"/></g><g transform="translate(20 16)"><path class="arrow--white" d="M-12,0H7.73" transform="translate(9.27 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/><path class="arrow--white" d="M12,6l7,6-7,6" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></g></svg>
                                 </a>
                             </div>
-                        </div>
+                        </article>
                     <?php endforeach; ?>
                 </section>
             <?php endif; ?>
@@ -87,19 +87,17 @@ get_header();
                 </section>
             <?php endif; ?>
 
-            <div id="anchor__comment" class="post__comment post__comment--width">
+            <section id="anchor__comment" class="post__comment post__comment--width">
                 <h2 aria-level="2" role="heading">Commentaires</h2>
                 <div class="post__comment__container">
-                    <?php if( is_user_logged_in()):?>
-                        <div class="comments__wp">
-                            <?php if (wp_count_comments(get_the_ID())->approved == 0):?>
-                                <div class="comments__empty">
-                                    <p>Il n'y a pas encore de commentaire pour cet article&nbsp;! Soyez le premier à en laisser un&nbsp;!</p>
-                                </div>
-                            <?php endif;?>
-                            <?php comments_template('/regular-comments.php'); ?>
-                        </div>
-                    <?php endif;?>
+                    <div class="comments__wp">
+                        <?php if (wp_count_comments(get_the_ID())->approved == 0):?>
+                            <div class="comments__empty">
+                                <p>Il n'y a pas encore de commentaire pour cet article&nbsp;! Soyez le premier à en laisser un&nbsp;!</p>
+                            </div>
+                        <?php endif;?>
+                        <?php comments_template('/regular-comments.php'); ?>
+                    </div>
                     <?php if( ! is_user_logged_in()):?>
                         <div class="section__info section__info--alert">
                             <p>Vous devez êter connecté pour répondre</p>
@@ -116,7 +114,7 @@ get_header();
                         </div>
                     <?php endif;?>
                 </div>
-            </div>
+            </section>
         </section>
     <?php endwhile; endif; ?>
 	</main>

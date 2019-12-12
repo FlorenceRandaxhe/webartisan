@@ -47,7 +47,7 @@ h2{
 h3{
   @include font (25px, $black, 400);
   &.post__title{
-    @include mq('tablet-wide') {
+    @include mq('desktop') {
       font-size: 30px;
     }
     margin-bottom: 1em;

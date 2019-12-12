@@ -7,9 +7,6 @@ input, select{
   background-color: transparent;
   font-size: 1em;
   font-family: $worksans;
-  &::placeholder{
-    color: $darkBlue;
-  }
   &:focus{
     background-color: rgba(255, 255, 255, 0.25);
     outline: none;
@@ -29,7 +26,29 @@ textarea{
   }
 }
 
-button{
+button,
+input[type='submit'],
+input[type='button'],
+input[type='reset'],
+input[type='file'],
+input[type='image'],
+label[for] {
   cursor: pointer;
 }
 
+input:-webkit-autofill {
+  //-webkit-text-fill-color: inherit;
+  box-shadow: 0 0 0 62.5rem $white inset;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,
+input::placeholder,
+textarea::placeholder{
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Florence Randaxhe">
+    <!-- AJOUTER LA DESCRIPTION ET LES KEYWORD SUR LA PAGE D'ACCEUIL  -->
     <meta name="description" content="<?php the_field('description');?>">
     <meta name="keywords" content="<?php the_field('keywords');?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -265,10 +266,11 @@
             <input type="checkbox" id="menu" class="menu">
             <label class="menu_icon" for="menu" id="burger">
                 <span class="sr_only">Navigation</span>
-                <span class="burger__menu"></span>
-                <span class="burger__menu"></span>
-                <span class="burger__menu"></span>
+                <span class="bar top"></span>
+                <span class="bar middle"></span>
+                <span class="bar bottom"></span>
             </label>
+
             <div class="head__nav">
                 <nav class="header__nav">
                     <h2 aria-level="2" role="heading" class="sr_only">Navigation principale</h2>
@@ -282,10 +284,11 @@
                     <div class="header__search">
                         <?php get_search_form();?>
                     </div>
+                    <!-- REVOIR ALIGNEMENT ET DESIGN SUR FIREFOX -->
                     <div class="header__member">
                         <div class="member_icon">
                             <span class="sr_only">Membres</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg__icon svg__icon--black"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3a3a3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg__icon svg__icon--black"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                         </div>
                         <ul class="member">
                             <?php if( is_user_logged_in()): $user = wp_get_current_user();

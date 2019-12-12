@@ -9,6 +9,7 @@ get_header();
 ?>
     <main class="doc main--top main--bottom">
         <section class="section__doc">
+            <h2 aria-level="2" role="heading" class="sr_only">Tous les langages</h2>
             <div class="doc__nav">
                 <ul class="doc__nav__list">
         <?php foreach ($tax_terms as $tax_term):?>
@@ -32,21 +33,26 @@ get_header();
                         ),
                     ]);
                     if ($alma->have_posts()): ?>
-                    <div class="doc__container" id="<?= $tax_term->slug;?>">
-                        <h2 aria-level="2" role="heading" class="doc__taxo__title"><?= $tax_term->slug;?></h2>
+                    <article class="doc__container" id="<?= $tax_term->slug;?>">
+                        <h3 aria-level="3" role="heading" class="doc__taxo__title"><?= $tax_term->slug;?></h3>
                         <ul>
                             <?php while ( $alma->have_posts() ) : $alma->the_post(); ?>
                                 <li  class="doc__content">
                                     <div class="doc__title">
-                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                        <?php the_title(); ?>
                                     </div>
                                     <div class="doc__excerpt">
-                                        <?php the_excerpt();?>
+                                        <p><?php the_content() ?></p>
+                                        <?php
+                                        $link = get_field('link');
+                                        if ($link):?>
+                                        <a target="_blank" href="<?php the_field('link'); ?>">En savoir plus <span class="sr_only">sur <?php the_title(); ?></span></a>
+                                        <?php endif;?>
                                     </div>
                                 </li>
                             <?php endwhile; else : endif; ?>
                         </ul>
-                    </div>
+                    </article>
 
                 <?php endforeach; ?>
         </section>

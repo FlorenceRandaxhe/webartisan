@@ -7,12 +7,21 @@
 }
 .post__excerpt{
   font-size: 18px;
-  padding-bottom: 0.5em;
+  p{
+    margin: 1em 0;
+  }
 }
 
 .post__date{
   color: #4F4F4F;
 }
+
+.post__meta, .post__meta__bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 
 @media only screen and (min-width:1100px) {
@@ -58,6 +67,6 @@
 }
 
 .post__author a {
-  font-weight: 500;
+  //font-weight: 500;
   border-bottom: 1px solid #000;
 }

@@ -18,7 +18,7 @@ get_header();
                 'order_by'=>'date'
             ]);
             if ($ress->have_posts()) : while ($ress->have_posts()) : $ress->the_post(); ?>
-                <div class="ressources__content">
+                <article class="ressources__content">
                     <p><time datetime="c" class="ressources__date"><?= get_the_date() ?></time></p>
                     <h3 aria-level="3" role="heading" class="ressources__title">
                         <?php the_title();?>
@@ -41,7 +41,7 @@ get_header();
                             </ul>
                         </div>
                     <?php endif;?>
-                </div>
+                </article>
             <?php endwhile; else: ?>
                 <div class="section__empty">
                     <p>Il n'y a pas de ressources pour le moment&nbsp;!</p>

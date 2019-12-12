@@ -11,17 +11,23 @@
   border-radius: 3px;
   padding: 2em;
   &__results{
+    margin-top: 0.5em;
     padding: 1.2em;
     display: flex;
+    border-radius: 3px;
     align-items: flex-start;
-    &:hover{
-      background-color: #f1f3f4;
-      border-radius: 3px;
-    }
     .tags{
       margin-top: 1em;
     }
   }
+}
+.search__title{
+  padding: 0.3em 0.5em;
+  border-radius: 3px;
+  background-color: rgba(211, 212, 213, 0.68);
+}
+.search__paginate{
+  margin-top: 1em;
 }
 .post__type{
   margin-right: 2em;
@@ -33,7 +39,9 @@
 .search__result__date{
   margin-right: 1em;
 }
-
+.search__result__title:hover{
+  color: $darkBlue;
+}
 .category--articles{
   text-align: center;
   background-color: $yellow;
