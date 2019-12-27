@@ -37,6 +37,9 @@
     max-width: 600px;
     width: 100%;
   }
+  em{
+    font-style: italic;
+  }
   a{
     color: $darkBlue;
     border-bottom: 1px solid $darkBlue;
@@ -48,8 +51,37 @@
     }
   }
   blockquote{
+    background-color: #caf2d8;
+    border-radius: 3px;
     font-style: italic;
-    padding-left: 2em;
+    padding:1em 2em 0;
+    p{
+      position: relative;
+      &:before{
+        content: '"';
+        font-size: 20px;
+        position: absolute;
+        top: -5px;
+        left: -10px;
+      }
+      &:after{
+        content: '"';
+        font-size: 20px;
+        position: absolute;
+        bottom: 0;
+        right: -10px;
+      }
+    }
+  }
+
+  div.syntaxhighlighter{
+    border-radius: 3px;
+  }
+  div.padd{
+    padding: 1em !important;
+    .line{
+      padding: 3px 0 !important;
+    }
   }
 
 }

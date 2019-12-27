@@ -6,10 +6,7 @@ get_header();
 
 ?>
     <main class="contact main--top main--bottom">
-        <section class="section__contact">
-            <h2 aria-level="2" role="heading" class="sr_only section__contact__title">
-                Formulaire de contact
-            </h2>
+        <div class="section__contact">
             <div class="contact__container">
                 <?php if($_GET['mail'] == 'success'): ?>
 
@@ -89,7 +86,7 @@ get_header();
                     </form>
                 <?php endif; ?>
             </div>
-        </section>
+        </div>
     </main>
     <footer class="skew--yellow">
 <?php get_footer();?>

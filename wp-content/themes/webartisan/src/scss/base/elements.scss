@@ -15,17 +15,9 @@ a {
   text-decoration: none;
 }
 
-// footer + header
 header, footer{
   padding: 0 5%;
   @include mq('mega-wide') {
     padding: 0 15%;
   }
-}
-
-div.syntaxhighlighter{
-  border-radius: 3px;
-}
-div.padd{
-  padding: 1em !important;
 }

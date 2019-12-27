@@ -1,5 +1,3 @@
-// titres
-// h1
 h1{
   @include font(50px, $black, 500 );
   @include mq('tablet-wide') {
@@ -9,17 +7,10 @@ h1{
     text-transform: uppercase;
     font-weight: 700;
   }
-  &.single__title{
-    @include font(25px, $black, 500 );
-    max-width: 700px;
-    margin: 0 auto 0.5em;
-    @include mq('tablet') {
-      font-size: 40px;
-    }
-  }
 }
-
-// h2
+h3{
+  @include font (25px, $black, 400);
+}
 h2{
   @include font(30px, $black, 500);
   @include mq('tablet-wide') {
@@ -29,7 +20,14 @@ h2{
     padding: 2em 0;
   }
 }
-
+.single__title{
+  @include font(25px, $black, 500 );
+  max-width: 700px;
+  margin: 0 auto 0.5em;
+  @include mq('tablet') {
+    font-size: 40px;
+  }
+}
 .aside__title{
   font-size: 20px;
   background-color: $yellow;
@@ -37,46 +35,40 @@ h2{
   padding: 0.5em;
   border-radius: 3px;
 }
-
 .profile__title{
   font-size: 25px;
   margin-bottom: 1em;
 }
-
-// h3
-h3{
-  @include font (25px, $black, 400);
-  &.post__title{
-    @include mq('desktop') {
-      font-size: 30px;
-    }
-    margin-bottom: 1em;
-    position: relative;
-    &:after{
-      content: '';
-      background-image:url(../img/underline.svg);
-      display: block;
-      position: absolute;
-      top:100%;
-      left: 0;
-      width: 60%;
-      height: 100%;
-      background-repeat: no-repeat;
-      z-index: -1;
-    }
+.post__title{
+  @include mq('desktop') {
+    font-size: 30px;
   }
-  &.aside__post__title{
-    @include font(17px, $black, 500);
+  margin-bottom: 1em;
+  position: relative;
+  &:after{
+    content: '';
+    background-image:url(../img/underline.svg);
+    display: block;
+    position: absolute;
+    top:100%;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
   }
-  &.job__title{
-    @include font(18px, $black, 500);
-    margin-bottom: 0.75em;
-  }
-  &.thread__title{
-    @include font(20px, $black, 500);
-    margin-bottom: 0.25em;
-  }
-  &.search__result__title{
-    @include font(20px, $black, 400);
-  }
+}
+.thread__title{
+  @include font(20px, $black, 500);
+  margin-bottom: 0.25em;
+}
+.aside__post__title{
+  @include font(17px, $black, 500);
+}
+.job__title{
+  @include font(18px, $black, 500);
+  margin-bottom: 0.75em;
+}
+.search__result__title{
+  @include font(18px, $black, 400);
 }

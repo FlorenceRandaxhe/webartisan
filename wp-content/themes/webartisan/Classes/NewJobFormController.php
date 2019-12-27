@@ -52,7 +52,6 @@ class NewJobFormController
         $values['town'] = $this->check_valid('town');
         $values['type'] = $this->check_valid('type');
         $values['skills'] = $this->check_valid('skills');
-        //$values['profilepicture'] = $this->check_img('profilepicture');
 
         return $values;
     }
@@ -121,23 +120,6 @@ class NewJobFormController
     }
 
     /**
-     * Check if an image is uploaded
-     * @param $attribute
-     * @return mixed
-     */
-    protected function check_img($attribute)
-    {
-        if( empty( $this->input[$attribute] ) )
-        {
-            $this->errors[$attribute] = 'Veuillez choisir une image';
-            return null;
-        }
-
-        return $this->input[$attribute];
-    }
-
-
-    /**
      * Save the given values using the post_type
      *@param array $values
      */
@@ -200,7 +182,7 @@ class NewJobFormController
             $this->errors['profilepicture'] = 'Le fichier est trop volumineux';
 
         if( !in_array( $new_file_mime, get_allowed_mime_types() ) )
-            $this->errors['profilepicture'] = 'Ce format n\'est pas accepté';
+            $this->errors['profilepicture'] = 'Veuillez choisir une image au bon format';
 
         while( file_exists( $new_file_path ) ) {
             $i++;

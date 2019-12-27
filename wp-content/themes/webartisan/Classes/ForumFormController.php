@@ -107,5 +107,11 @@ class ForumFormController
         $taxo_value = $values['taxo_forum'];
         update_field($taxo, $taxo_value, $post_id);
 
+        // Send mail to admin
+        $mailHeaders = "Nouveau sujet sur le forum" . "\r\n";
+        $message = 'Un nouveau sujet a été ajouté sur votre site Web Artisan';
+        $subject = 'Web Artisan - nouveau sujet';
+        mail("randaxhe.florence@gmail.com", $subject, $message, $mailHeaders);
+
     }
 }

@@ -321,3 +321,20 @@ $args['order'] = 'DESC';
 $args['order_by'] = 'date';
 $args['showposts'] = '6';
 $thread = new WP_Query($args);
+
+
+
+
+
+    if ( is_front_page() || is_singular( 'articles' ) || is_page_template(array(
+            'template-parts/template-blog.php',
+            'template-parts/template-contact.php',
+            'template-parts/template-ressources.php',
+            'template-parts/template-profile.php',
+            'template-parts/template-about.php'))) echo 'skew--yellow';
+
+	if(is_page_template( 'template-parts/template-tutos.php') || is_singular( 'tutoriels' )) echo 'skew--green';
+
+	if(is_page_template(array('template-parts/template-forum.php','template-parts/template-newForum.php' ))|| is_singular( 'forum' )) echo 'skew--pink';
+
+	if(is_page_template(array('template-parts/template-jobs.php', 'template-parts/template-addJob.php'))) echo 'skew--blue';

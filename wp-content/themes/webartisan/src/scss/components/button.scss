@@ -144,6 +144,9 @@
   }
   display: flex;
   align-items: center;
+  &:hover svg{
+    animation : arrow_move 0.5s;
+  }
 }
 
 @keyframes arrow_move {
@@ -151,7 +154,7 @@
     transform: translateX(0);
   }
   50%{
-    transform: translateX(20px);
+    transform: translateX(15px);
   }
   100%{
     transform: translateX(0);
@@ -172,4 +175,18 @@
 .search__button__icon{
   background-color: transparent;
   border: none;
+}
+
+
+.button--code{
+  border: 1px solid #285775;
+  background-color: #285775;
+  border-radius: 3px;
+  padding: 5px 10px;
+  color:$white;
+  margin: 3px;
+  &:hover{
+    background-color: $white;
+    color: #285775;
+  }
 }

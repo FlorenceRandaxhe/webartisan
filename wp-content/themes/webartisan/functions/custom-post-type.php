@@ -118,6 +118,35 @@ function wa_register_post_types(){
 
     ] );
 
+    // Documentation
+    register_post_type( 'doc', [
+        'label'                 => 'Web docs',
+        'labels'                => [
+            'singular_name'         => 'Web doc',
+            'add_new_item'          => 'Ajouter une doc',
+            'add_new'               => 'Ajouter une doc',
+            'edit_item'             => 'Editer une des docs',
+            'new_item'              => 'Nouvelle doc',
+            'view_item'             => 'Voir les docs',
+            'search_items'          => 'Rechercher une doc',
+            'not_found'             => 'Aucune doc trouvée',
+            'not_found_in_trash'    => 'Aucune doc dans la corbeille',
+        ],
+        'description'           => 'Toute la doc',
+        'hierarchical'          => true,
+        'public'                => true,
+        'menu_icon'             => 'dashicons-editor-ul',
+        'menu_position'         => 5,
+        'supports'              => array(
+            'title',
+            'editor',
+            'excerpt',
+            'comments',
+            'revisions',
+            'custom-fields'
+        ),
+    ] );
+
     // External ressources
     register_post_type( 'ressources', [
         'label'                 => 'Ressources',
@@ -143,35 +172,6 @@ function wa_register_post_types(){
             'custom-fields'
         ),
 
-    ] );
-
-    // Documentation
-    register_post_type( 'doc', [
-        'label'                 => 'Web docs',
-        'labels'                => [
-            'singular_name'         => 'Web doc',
-            'add_new_item'          => 'Ajouter une doc',
-            'add_new'               => 'Ajouter une doc',
-            'edit_item'             => 'Editer une des docs',
-            'new_item'              => 'Nouvelle doc',
-            'view_item'             => 'Voir les docs',
-            'search_items'          => 'Rechercher une doc',
-            'not_found'             => 'Aucune doc trouvée',
-            'not_found_in_trash'    => 'Aucune doc dans la corbeille',
-        ],
-        'description'           => 'Toute la doc',
-        'hierarchical'          => true,
-        'public'                => true,
-        'menu_icon'             => 'dashicons-editor-ul',
-        'menu_position'         => 5,
-        'supports'              => array(
-                'title',
-                'editor',
-                'excerpt',
-                'comments',
-                'revisions',
-                'custom-fields'
-        ),
     ] );
 }
 add_action( 'init', 'wa_register_post_types' );

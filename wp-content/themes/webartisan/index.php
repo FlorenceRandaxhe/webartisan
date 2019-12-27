@@ -1,7 +1,7 @@
 <?php
-/**
- * Home page
- */
+/*
+    Template Name: Homepage
+*/
 get_header();
 $articles = new WP_Query( ['post_type'=>'articles', 'order'=>'DESC', 'order_by'=>'date', 'showposts' => 5 ] );
 $tuto = new WP_Query( ['post_type'=>'tutoriels', 'order'=>'DESC', 'order_by'=>'date', 'showposts' => 4 ] );
@@ -9,7 +9,7 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
 ?>
 <main class="home">
     <section class="featured__posts">
-        <!-- AUGMENTER L'ANGLE POUR LE SKEW : LE PREMIER POST DEVRAIT COUPER PLUS LA LIGNE OBLIQUE -->
+    
              <?php if ( $articles->have_posts() ) :?>
             <h2 aria-level="2" role="heading" class="sr_only">Les dernières actualités</h2>
             <div class="grid__parent">
@@ -41,15 +41,10 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
                             <p><time datetime="c" class="post__date"><?= get_the_date() ?></time></p>
                         </div>
                         <div class="post__excerpt">
-                        <!--
-                            L'EXCEPT DEVRAIT PLUS RESSORTIR (AJOUTER DU MARGIN ?)
-                        -->
+                    
                             <?php the_excerpt(); ?>
                         </div>
-                        <!--
-                            LA FLECHE EST TROP GRANDE ET LA ZONE CLIQUABLE TROP PETITE
-                            REPRENDRE LA MEME FLECHE QUE POUR LES TUTOS (SANS LE CONTOUR)
-                         -->
+                    
                         <div class="post__meta__bottom">
 
                             <div class="comments__count">
@@ -70,9 +65,7 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
                                 </svg>
 
                             </a>
-                            <!--
-                                ZONE CLIQUABLE TROP GRANDE // TROP PROCHE DU LIEN (RISQUE D'ERREUR )
-                           -->
+                        
                         </div>
                     </div>
                 </article>
@@ -115,7 +108,7 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
                             <?php the_author_posts_link(); ?>
                         </div>
                         <p><time datetime="c" class="post__date"><?= get_the_date() ?></time></p>
-                        <div class="tuto__excerpt"
+                        <div class="tuto__excerpt">
                             <?php the_excerpt(); ?>
                         </div>
                         <div class="tuto__meta">
@@ -159,7 +152,7 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
                     <div class="tuto__link">
                         <a href="<?php the_permalink(); ?>" class="button__more--rounded">
                             <span class="sr_only">Voir le tuto : <?php the_title(); ?></span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56"><g  transform="translate(56) rotate(90)"  stroke="#000" stroke-width="2"><circle class="button__svg" cx="28" cy="28" r="27" fill="none"/></g><g transform="translate(20 16)"><path class="arrow--white" d="M-12,0H7.73" transform="translate(9.27 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/><path class="arrow--white" d="M12,6l7,6-7,6" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></g></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56"><g  transform="translate(56) rotate(90)"  stroke="#1D2A34" stroke-width="2"><circle class="button__svg" cx="28" cy="28" r="27" fill="none"/></g><g transform="translate(20 16)"><path class="arrow--white" d="M-12,0H7.73" transform="translate(9.27 12)" fill="none" stroke="#1D2A34" stroke-linecap="round" stroke-width="2"/><path class="arrow--white" d="M12,6l7,6-7,6" fill="none" stroke="#1D2A34" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></g></svg>
                         </a>
                     </div>
                 </article>
@@ -249,7 +242,7 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
                     <div class="thread__link">
                         <a href="<?php the_permalink();?>" class="button__more--rounded">
                             <span class="sr_only">Voir le sujet : <?php the_title();?></span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56"><g  transform="translate(56) rotate(90)"  stroke="#000" stroke-width="2"><circle class="button__svg" cx="28" cy="28" r="27" fill="none"/></g><g transform="translate(20 16)"><path class="arrow--white" d="M-12,0H7.73" transform="translate(9.27 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/><path class="arrow--white" d="M12,6l7,6-7,6" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></g></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56"><g  transform="translate(56) rotate(90)"  stroke="#1D2A34" stroke-width="2"><circle class="button__svg" cx="28" cy="28" r="27" fill="none"/></g><g transform="translate(20 16)"><path class="arrow--white" d="M-12,0H7.73" transform="translate(9.27 12)" fill="none" stroke="#1D2A34" stroke-linecap="round" stroke-width="2"/><path class="arrow--white" d="M12,6l7,6-7,6" fill="none" stroke="#1D2A34" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></g></svg>
                         </a>
                     </div>
                 </article>

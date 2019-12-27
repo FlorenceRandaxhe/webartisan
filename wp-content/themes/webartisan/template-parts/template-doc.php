@@ -42,11 +42,11 @@ get_header();
                                         <?php the_title(); ?>
                                     </div>
                                     <div class="doc__excerpt">
-                                        <p><?php the_content() ?></p>
+                                        <?php the_content() ?>
                                         <?php
                                         $link = get_field('link');
                                         if ($link):?>
-                                        <a target="_blank" href="<?php the_field('link'); ?>">En savoir plus <span class="sr_only">sur <?php the_title(); ?></span></a>
+                                        <a class="doc__excerpt__link" target="_blank" href="<?php the_field('link'); ?>">En savoir plus <span class="sr_only">sur <?php the_title(); ?></span></a>
                                         <?php endif;?>
                                     </div>
                                 </li>

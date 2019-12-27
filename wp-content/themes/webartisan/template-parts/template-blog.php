@@ -4,7 +4,7 @@
 */
 get_header();
 $currentPage = get_query_var('paged');
-$articles = new WP_Query(['post_type'=>'articles', 'order'=>'DESC', 'order_by'=>'date', 'posts_per_page' => 5, 'paged' => $currentPage]);
+$articles = new WP_Query(['post_type'=>'articles', 'order'=>'DESC', 'order_by'=>'date', 'posts_per_page' => 9, 'paged' => $currentPage]);
 ?>
 
 <main class="blog">
@@ -14,6 +14,10 @@ $articles = new WP_Query(['post_type'=>'articles', 'order'=>'DESC', 'order_by'=>
                 <div class="grid__parent">
                 <?php while ($articles->have_posts()) : $articles->the_post(); ?>
                     <article class="post grid__child">
+                        <!--
+                            REVOIR RYTHME VERTICAL
+                            IL Y A TROP D'ELEMENT QUI GERE LA HIERARCHIE VISUELLE (GRAS, MAJUSCULE)
+                        -->
                         <?php if ( has_post_thumbnail() ): ?>
                             <figure class="post__img" >
                                 <a href="<?php the_permalink();?>">
@@ -24,7 +28,10 @@ $articles = new WP_Query(['post_type'=>'articles', 'order'=>'DESC', 'order_by'=>
                         <div class="post__container">
                             <h3 aria-level="3" role="heading" class="post__title"><?php the_title(); ?></h3>
                             <div class="post__category category--yellow">
-                                <?php the_terms( $articles->ID, 'categorypost','<span class="sr_only">Catégorie : </span>' ); ?>
+                                <!--
+                                    AJOUTER UN EFFET HOVER SUR LA CATEGORIE
+                                -->
+                                <?php the_terms( $articles->ID, 'categorypost', '<span class="sr_only">Catégorie&nbsp;: </span>' ); ?>
                             </div>
                             <div class="post__meta">
                                 <div class="post__author">
@@ -33,22 +40,41 @@ $articles = new WP_Query(['post_type'=>'articles', 'order'=>'DESC', 'order_by'=>
                                 <p><time datetime="c" class="post__date"><?= get_the_date() ?></time></p>
                             </div>
                             <div class="post__excerpt">
+                                <!--
+                                    L'EXCEPT DEVRAIT PLUS RESSORTIR (AJOUTER DU MARGIN ?)
+                                -->
                                 <?php the_excerpt(); ?>
                             </div>
-                            <?php if ( !wp_count_comments(get_the_ID())->approved == 0):?>
+                            <!--
+                                LA FLECHE EST TROP GRANDE ET LA ZONE CLIQUABLE TROP PETITE
+                                REPRENDRE LA MEME FLECHE QUE POUR LES TUTOS (SANS LE CONTOUR)
+                             -->
+                            <div class="post__meta__bottom">
+
                                 <div class="comments__count">
                                     <a class="icon__align" href="<?php the_permalink(); ?>#anchor__comment">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b8b8b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                                        <span><?= wp_count_comments(get_the_ID())->approved; ?></span>
+                                        <span><?= wp_count_comments( get_the_ID() )->approved; ?></span>
+                                        <span class="sr_only"> commentaires pour <?php the_title(); ?></span>
                                     </a>
                                 </div>
-                            <?php endif;?>
-                            <a href="<?php the_permalink(); ?>" class="button__more--arrow">
-                                Lire plus <span class="sr_only">sur <?php the_title(); ?></span>
-                            </a>
+
+                                <a href="<?php the_permalink(); ?>" class="button__more--arrow">
+                                    Lire plus<span class="sr_only">sur <?php the_title(); ?></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="14.82" viewBox="0 0 30 14.82">
+                                        <g id="arrow-right" transform="translate(1 1.41)">
+                                            <path id="Tracé_6" data-name="Tracé 6" d="M-12,0H14" transform="translate(12 6)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                            <path id="Tracé_5" data-name="Tracé 5" d="M12,6l7,6-7,6" transform="translate(9 -6)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                        </g>
+                                    </svg>
+
+                                </a>
+                                <!--
+                                    ZONE CLIQUABLE TROP GRANDE // TROP PROCHE DU LIEN (RISQUE D'ERREUR )
+                               -->
+                            </div>
                         </div>
                     </article>
-
                 <?php endwhile;?>
                 </div>
                     <div class="pagination_links">

@@ -26,7 +26,7 @@ get_header();
         <section class="section__search">
 
             <div class="search__content">
-                <h2 aria-level="2" role="heading" class="featured__section__title">
+                <h2 aria-level="2" role="heading" class="search__content__titlr">
                     Résultats de recherche pour&nbsp;: "<?php the_search_query(); ?>"
                 </h2>
                 <?php foreach ($post_types as $post_type):
@@ -48,9 +48,9 @@ get_header();
                                     <p class="category--<?= get_post_type();?>"><?= get_post_type();?></p>
                                 </div>
                                 <div class="search__content__header">
-                                    <h3 class="search__result__title">
+                                    <h4 aria-level="4" role="heading" class="search__result__title">
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                    </h3>
+                                    </h4>
 
                                     <div class="search__result__meta">
                                         <time  datetime="c" class="search__result__date"><?= get_the_date() ?></time>

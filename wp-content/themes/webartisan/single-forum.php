@@ -74,47 +74,9 @@ get_header();
                             </div>
                         </div>
                     </div>
-                    <section id="anchor__comment" class="thread__respond post__comment--width">
+                <?php get_template_part('partials/thread-reply');?>
 
-                        <div class="post__comment__container">
-
-                            <div class="comments__wp">
-                                <?php if (wp_count_comments(get_the_ID())->approved == 0):?>
-                                    <div class="comments__empty">
-                                        <p>Ce sujet n'a pas encore de réponse</p>
-                                    </div>
-                                <?php endif;?>
-                                <?php comments_template('/custom-comments.php'); ?>
-                                <div class="syntax__codes">
-                                    <p>Pour ajouter une coloration syntaxique, copier coller les raccourcis suivants&nbsp;:</p>
-                                    <ul>
-                                        <li class="syntax__codes__item">Code&nbsp;: <span>[code]&hellip;[/code]</span></li>
-                                        <li class="syntax__codes__item">HTML&nbsp;: <span>[code=html]&hellip;[/code]</span></li>
-                                        <li class="syntax__codes__item">CSS&nbsp;: <span>[code=css]&hellip;[/code]</span></li>
-                                        <li class="syntax__codes__item">PHP&nbsp;: <span>[code=php]&hellip;[/code]</span></li>
-                                        <li class="syntax__codes__item">JAVASCRIPT&nbsp;: <span>[code=javascript]&hellip;[/code]</span></li>
-                                        <li class="syntax__codes__item">MySQL&nbsp;: <span>[code=sql]&hellip;[/code]</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <?php if( ! is_user_logged_in()):?>
-                                <div class="section__info section__info--alert">
-                                    <p>Vous devez êter connecté pour répondre</p>
-                                </div>
-                                <div>
-                                    <div class="login__form">
-                                        <?php wp_login_form(array( 'redirect' => 'http://localhost' . $_SERVER['REQUEST_URI'], ) ); ?>
-                                    </div>
-
-                                    <div class="other__link">
-                                        <a href="<?= wa_get_page_url('template-register.php') ;?>">Me créer un compte</a>
-                                        <a href="<?= wp_lostpassword_url(); ?>">Mot de passe oublié !</a>
-                                    </div>
-                                </div>
-                            <?php endif;?>
-                        </div>
-                    </section>
-            </section>
+        </section>
 
             <div class="thread_aside">
                 <aside>
@@ -161,3 +123,9 @@ get_header();
     </main>
     <footer class="skew--pink">
 <?php get_footer();?>
+
+<script type="text/javascript">
+    function insertText(elemID, text) {
+        const elem = document.getElementById(elemID);
+        elem.value += text;}
+</script>

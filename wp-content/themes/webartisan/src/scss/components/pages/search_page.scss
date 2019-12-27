@@ -2,29 +2,26 @@
   @include wrapper(1000px, 2em);
 }
 .search__content{
-  .featured__section__title{
-    padding-bottom: 10px;
-    @include font(25px, $black, 500);
-  }
   background-color: $white;
   box-shadow: $big_shadow_hover;
   border-radius: 3px;
   padding: 2em;
-  &__results{
-    margin-top: 0.5em;
-    padding: 1.2em;
-    display: flex;
-    border-radius: 3px;
-    align-items: flex-start;
-    .tags{
-      margin-top: 1em;
-    }
-  }
+}
+.search__content__title{
+  padding-bottom: 10px;
+  @include font(25px, $black, 500);
+}
+.search__content__results{
+  margin-top: 0.5em;
+  padding: 1.2em;
+  display: flex;
+  border-radius: 3px;
+  align-items: flex-start;
 }
 .search__title{
   padding: 0.3em 0.5em;
   border-radius: 3px;
-  background-color: rgba(211, 212, 213, 0.68);
+  background-color: rgba(211, 212, 213, 0.4);
 }
 .search__paginate{
   margin-top: 1em;
@@ -49,7 +46,6 @@
   border-radius: 3px;
   text-transform: uppercase;
 }
-
 .category--tutoriels{
   text-align: center;
   background-color: $blue;
@@ -57,7 +53,6 @@
   border-radius: 3px;
   text-transform: uppercase;
 }
-
 .category--forum{
   text-align: center;
   background-color: $pink;

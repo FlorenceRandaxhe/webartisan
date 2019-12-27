@@ -7,7 +7,7 @@ if( ! function_exists( 'comment_template' ) ):
     function comment_template( $comment, $args, $depth )
     {
         ?>
-    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+    <li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
         <div class="comment__content">
             <div class="comment__content__img">
                 <?= get_avatar( $comment,$size='80',$default='', $alt='Photo de profil' ); ?>
@@ -18,7 +18,7 @@ if( ! function_exists( 'comment_template' ) ):
                 <?php endif; ?>
                 <div class="comment__meta">
                     <p class="comment__meta__date"><?php printf( esc_html__( '%1$s à %2$s' ), get_comment_date(),  get_comment_time() ) ?></p>
-                    <a class="comment__meta__author" href="<?php comment_author(); ?>"><?= get_comment_author() ?></a><p ></p>
+                    <p class="comment__meta__author"><?= get_comment_author() ?></p>
                 </div>
 
                 <div class="comment__text">

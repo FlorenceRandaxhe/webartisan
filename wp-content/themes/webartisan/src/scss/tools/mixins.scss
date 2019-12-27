@@ -131,3 +131,17 @@ $breakpoints: (
 }
 
 $timing: 0.3s;
+
+
+
+@mixin reset-input-styles{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  overflow: hidden;
+  border-radius: 0; 
+  max-width: 100%; 
+  cursor: initial; 
+  outline: none; 
+  padding: 0; 
+  border: 0; 
+}

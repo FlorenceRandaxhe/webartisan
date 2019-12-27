@@ -61,7 +61,3 @@ function verify_user_pass( $user, $username, $password )
 }
 add_filter( 'authenticate', 'verify_user_pass', 1, 3 );
 
-/**********************************************************
- * What to do on logout
- */
-

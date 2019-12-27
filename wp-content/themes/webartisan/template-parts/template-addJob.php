@@ -128,7 +128,7 @@ get_header();
                                      <?php endif; ?>
                                      <fieldset>
                                          <legend class="form__label form__label--block">Logo de l'agence <b>*</b></legend>
-                                         <label for="profilepicture" class="form__label">Choisir une image</label>
+                                         <label for="profilepicture" class="form__label">Choisir une image (jpg, jpeg, png)</label>
                                          <input type="file" id="profilepicture" name="profilepicture" class="input--image">
                                      </fieldset>
 

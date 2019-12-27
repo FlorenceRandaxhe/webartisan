@@ -3,7 +3,7 @@
 }
 .doc__taxo__title{
   text-transform: uppercase;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 .doc__container{
   margin-bottom: 2em;
@@ -18,52 +18,43 @@
   @include mq('tablet-wide'){
     flex-direction: row;
   }
-  &:not(:last-of-type){
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-    border-bottom: 1px solid #c7c7c7;
-  }
+}
+.doc__content:not(:last-of-type){
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #c7c7c7;
 }
 .doc__title{
+  font-size:18px;
   flex: 0 1 15%;
-  a{
-    border-bottom: 1px solid $darkBlue;
-    transition: 0.3s;
-    padding: 0 2px;
-    @include font(18px, 500, $black);
-    &:hover{
-      background-color: $darkBlue;
-      color: $white;
-      transition: 0.3s;
-    }
-  }
 }
 .doc__excerpt{
   flex: 1 1 85%;
 }
-
+.doc__excerpt__link{
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 0.5em;
+}
+.doc__excerpt__link:hover{
+  border-bottom:1px solid #000;
+}
 .doc__nav{
   padding: 1em;
   border: 1px solid $darkBlue;
   border-radius: 3px;
   margin-bottom: 1em;
-  &__list{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  &__list__item{
-    transition: opacity 0.2s;
-    a {
-      text-transform: uppercase;
-      font-size: 18px;
-    }
-
-  }
-
 }
-
-
+.doc__nav__list{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.doc__nav__list__item{
+  transition: opacity 0.2s;
+  text-transform: uppercase;
+  font-size: 18px;
+}
 .doc__nav__list:hover .doc__nav__list__item:not(:hover) {
   opacity: 0.5;
 }

@@ -12,7 +12,9 @@ input, select{
     outline: none;
   }
 }
-legend{font-weight: 500}
+legend{
+  font-weight: 500
+}
 textarea{
   border: 1px solid $darkBlue;
   padding: 0.5em 1em;
@@ -25,7 +27,6 @@ textarea{
     background-color: #f2f4f9;
   }
 }
-
 button,
 input[type='submit'],
 input[type='button'],
@@ -35,12 +36,9 @@ input[type='image'],
 label[for] {
   cursor: pointer;
 }
-
 input:-webkit-autofill {
-  //-webkit-text-fill-color: inherit;
   box-shadow: 0 0 0 62.5rem $white inset;
 }
-
 button,
 input,
 optgroup,
@@ -52,3 +50,13 @@ textarea::placeholder{
   font-size: inherit;
   color: inherit;
 }
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='search'],
+input[type='image'] {
+    -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+

@@ -183,6 +183,13 @@ class RegisterFormController
 
     protected function save($values)
     {
+        // insert new user
         wp_create_user( $values['user_login'], $values['user_password'], $values['user_email'] );
+
+        // send mail to admin
+        $mailHeaders = "Nouvelle inscription de " . $values['user_login'] . "\r\n";
+        $message = 'Nouvelle inscription de ' . $values['user_login'] . ' sur votre site Web Artisan';
+        $subject = 'Web Artisan - nouvelle inscription';
+        mail("randaxhe.florence@gmail.com", $subject, $message, $mailHeaders);
     }
 }

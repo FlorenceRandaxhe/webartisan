@@ -2,11 +2,15 @@
 
 require_once 'functions/custom-login.php';
 require_once 'functions/custom-post-type.php';
-require_once 'functions/custom-taxonomy.php';
+require_once 'functions/custom-taxo-category.php';
+require_once 'functions/custom-taxo-tag.php';
 require_once 'functions/custom-comment.php';
 require_once 'functions/thumbs.php';
 require_once 'functions/nav.php';
 require_once 'functions/filters.php';
+require_once 'functions/remove-editor.php';
+require_once 'functions/meta-information.php';
+require_once 'functions/header.php';
 
 /************************************************
  * Path for assets
@@ -58,6 +62,10 @@ function remove_menus()
 }
 add_action( 'admin_menu', 'remove_menus' );
 
+
+/*************************************************
+ * Custom excerpt length
+ */
 add_filter( 'excerpt_length', function( $length )
 {
     return 30;
@@ -66,15 +74,38 @@ add_filter( 'excerpt_length', function( $length )
 /***************************************************
  * Change author slug
  */
-add_action( 'init', 'cng_author_base' );
-function cng_author_base()
+add_action( 'init', 'wa_author_base' );
+function wa_author_base()
 {
     global $wp_rewrite;
     $author_slug = 'membre'; // change slug name
     $wp_rewrite->author_base = $author_slug;
 }
 
-/***************************************************
+/*****************************************************
+ * hide admin bar
+ */
+function wa_show_admin_bar()
+{
+    return false;
+}
+add_filter( 'show_admin_bar' , 'wa_show_admin_bar' );
+
+
+/**
+ *
+ */
+function custom_new_gravatar ($avatar_defaults) {
+    $avatar = 'http://localhost/web_artisan/wp-content/uploads/2019/12/default-gravatar.jpg';
+    $avatar_defaults[$avatar] = "Custom Gravatar";
+    return $avatar_defaults;
+}
+add_filter( 'avatar_defaults', 'custom_new_gravatar' );
+
+
+/************************************************************************/
+/******************************   Forms  ********************************/
+/************************************************************************
  *
  * Handle new thread formular
  */
@@ -85,6 +116,10 @@ function wa_get_forum_form()
 
 if( $_POST['wa_forum_form'] ?? false === wa_get_forum_form() )
 {
+    if (!is_user_logged_in()) {
+        wp_redirect(home_url('/connexion'));
+        exit;
+    }
     require 'Classes/ForumFormController.php';
     $forumForm = new ForumFormController( $_POST );
     $_SESSION['thread'] = $forumForm;
@@ -200,10 +235,3 @@ if( $_POST['wa_mail_form'] ?? false === wa_change_mail_form() )
     }
 }
 
-
-
-function wa_show_admin_bar()
-{
-    return false;
-}
-add_filter( 'show_admin_bar' , 'wa_show_admin_bar' );

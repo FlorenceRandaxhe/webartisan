@@ -32,11 +32,5 @@
     padding: 2em;
     border-radius: 5px;
     box-shadow: $big_shadow;
-    transition: 0.3s;
-    &:hover{
-      transform: translateY(-10px);
-      box-shadow: $big_shadow_hover;
-      transition: 0.3s;
-    }
   }
 }

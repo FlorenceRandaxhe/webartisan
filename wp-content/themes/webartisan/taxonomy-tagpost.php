@@ -8,7 +8,7 @@ get_header();
 <main class="taxo main--top-mid main--bottom">
     <section class="section__taxo">
         <h2 aria-level="2" role="heading" class="featured__section__title">
-            Tous les tutos de la catégorie&nbsp;: <?php single_cat_title(); ?>
+            Tous les articles avec le tag&nbsp;: <?php single_cat_title(); ?>
         </h2>
         <div class="taxo__parent">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -38,15 +38,12 @@ get_header();
                                 Lire plus <span class="sr_only">sur <?php the_title(); ?></span>
                             </a>
                         </div>
-                        <?php $tags = get_the_terms( $articles->ID, 'tagpost' );
-                        if ( $tags ):?>
+                        <?php $tags = get_the_terms( $articles->ID, 'tagpost');
+
+                        if ($tags):?>
                             <div class="tags">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3e3e3e" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
-                                <ul>
-                                    <?php foreach ( $tags as $tag ):?>
-                                        <li class="tags__list__item"><?= $tag->name;?></li>
-                                    <?php endforeach;?>
-                                </ul>
+                                <div class="tags__list__item"><?php the_terms( $articles->ID, 'tagpost', '', ' ');?></div>
                             </div>
                         <?php endif;?>
                     </div>
@@ -68,5 +65,5 @@ get_header();
         <?php endif; ?>
     </section>
 </main>
-<footer class="skew--green">
+<footer class="skew--yellow">
     <?php get_footer();?>

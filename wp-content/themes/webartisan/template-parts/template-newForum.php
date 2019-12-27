@@ -7,10 +7,7 @@ $tax_terms = get_terms($taxonomy, array('hide_empty' => false));
 get_header();
 ?>
     <main class="forum__add main--top main--bottom">
-        <section class="section__forum__add">
-            <h2 aria-level="2" role="heading" class="sr_only section__forum__title">
-                Formulaire de nouveau sujet
-            </h2>
+        <div class="section__forum__add">
             <div class="forum__add__container">
                 <?php if( is_user_logged_in()):?>
                     <form action="#" method="post">
@@ -73,7 +70,7 @@ get_header();
                     </div>
                 <?php endif;?>
             </div>
-        </section>
+        </div>
     </main>
     <footer class="skew--pink">
 <?php get_footer();?>

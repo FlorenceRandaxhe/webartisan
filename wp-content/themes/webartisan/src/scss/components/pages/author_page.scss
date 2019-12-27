@@ -5,17 +5,17 @@
   box-shadow: $big_shadow;
   padding: 2em;
   @include wrapper(900px, 3em);
-  img{
-    border-radius: 100%;
-  }
-  .admin__badge{
-    margin: 1em 0;
-    display: inline-block;
-    padding: 0.5em;
-    border-radius: 3px;
-    background-color: $darkBlue;
-    @include font(18px, $white, 500);
-  }
+}
+.subscriber__info__img{
+  border-radius: 100%;
+}
+.admin__badge{
+  margin: 1em 0;
+  display: inline-block;
+  padding: 0.5em;
+  border-radius: 3px;
+  background-color: $darkBlue;
+  @include font(18px, $white, 500);
 }
 .author__tutos, .author__posts{
   @include wrapper(1200px, 3em);

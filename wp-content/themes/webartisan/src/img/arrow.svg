@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="14.82" viewBox="0 0 30 14.82">
   <g id="Groupe_80" data-name="Groupe 80" transform="translate(5479.5 -92.59)">
     <g id="Groupe_79" data-name="Groupe 79">
-      <path id="Tracé_119" data-name="Tracé 119" d="M-12,0H14" transform="translate(-5466.5 100)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
-      <path id="Tracé_120" data-name="Tracé 120" d="M12,6l7,6-7,6" transform="translate(-5469.5 88)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Tracé_119" data-name="Tracé 119" d="M-12,0H14" transform="translate(-5466.5 100)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+      <path id="Tracé_120" data-name="Tracé 120" d="M12,6l7,6-7,6" transform="translate(-5470.5 88)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
     </g>
   </g>
 </svg>
