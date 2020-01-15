@@ -1,29 +1,31 @@
 // animation illustration page tuto
-.illu__tuto{
-  .appear {
+  .tuto_appear {
     opacity: 0;
     animation: hideshow 10s infinite;
   }
   .tuto_text1{
-    transform: translateX(66px) translateY(69px);
+    //transform: translateX(66px) translateY(69px);
     animation: tutotext_1 10s ease-in-out infinite;
   }
   .tuto_text2{
-    transform: translateX(30px) translateY(69px);
+    //transform: translateX(30px) translateY(69px);
     animation: tutotext_2 10s ease-in-out infinite;
   }
-}
 
 @keyframes tutotext_1 {
-  0% { transform: translateX(66px) translateY(69px); }
-  50% { transform: translateX(20px) translateY(69px); }
-  0% { transform: translateX(66px) translateY(69px); }
+  0% { transform: translateX(15px)  }
+  31% { transform: translateX(0)  }
+  60% { transform: translateX(0); }
+  71% { transform: translateX(15px) }
+  100% { transform: translateX(15px) }
 }
 
 @keyframes tutotext_2 {
-  0% { transform: translateX(30px) translateY(69px); }
-  50% { transform: translateX(76px) translateY(69px); }
-  0% { transform: translateX(30px) translateY(69px); }
+  0% { transform: translateX(-15px) }
+  31% { transform: translateX(0) }
+  60% { transform: translateX(0); }
+  71% { transform: translateX(-15px) }
+  100% { transform: translateX(-15px) }
 }
 @keyframes hideshow {
   0% { opacity: 0; }
@@ -35,14 +37,13 @@
 }
 
 // animation illustration page forum
-.illu_forum{
+
   .bubble_1{
     animation: bubbleTalk_1 8s ease-in-out infinite;
   }
   .bubble_2{
     animation: bubbleTalk_2 8s ease-in-out infinite;
   }
-}
 
 @keyframes bubbleTalk_1 {
   0%{
@@ -83,7 +84,7 @@
 }
 
 
-
+// Blog page animations
 .blog_rec{
   animation:stroke-offset 20s ease-in infinite;
 }
@@ -101,6 +102,47 @@
   }
 }
 
+.circle_blog_1, .circle_blog_2, .circle_blog_3{
+  animation:circleAnime 20s ease-in-out infinite;
+}
 
+@keyframes circleAnime {
+  0% {
+    opacity:0;
+    transform:translateX(-40px);
+  }
+  10%{
+    opacity:1;
+  }
+  20%{
+    transform:translateX(0);
+  }
+  100%{
+    transform:translateX(0);
+  }
+}
 
+.job_attach{
+ animation:jobanime 5s ease-in-out infinite;
+}
 
+@keyframes jobanime {
+  0% {
+  transform:translateY(-14px);
+    
+  }
+  50%{
+  transform:translateY(0);
+  }
+  100%{
+  transform:translateY(-14px);
+  }
+}
+
+.contact__illu{
+  transform:rotate(-10deg) translateX(-20px) ;
+}
+
+.hero__illu{
+  margin-right: 50px
+}

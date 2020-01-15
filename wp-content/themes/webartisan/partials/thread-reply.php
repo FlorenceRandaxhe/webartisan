@@ -10,8 +10,8 @@
             <?php endif;?>
             <?php comments_template('/custom-comments.php'); ?>
             <?php if (is_user_logged_in()):?>
-                <div class="syntax__codes">
-                    <p>Coloration syntaxique&nbsp;:</p>
+                <div>
+                    <p class="syntax__codes">Coloration syntaxique&nbsp;:</p>
                     <div>
                         <button class="button--code" onclick="insertText('comment', '[code]…[/code]');">code</button>
                         <button class="button--code" onclick="insertText('comment', '[code=html]…[/code]');">html</button>
@@ -29,7 +29,7 @@
             </div>
             <div>
                 <div class="login__form">
-                    <?php wp_login_form(array( 'redirect' => 'http://localhost' . $_SERVER['REQUEST_URI'] . '#respond', ) ); ?>
+                    <?php wp_login_form(array( 'redirect' => home_url() . $_SERVER['REQUEST_URI'] . '#respond', ) ); ?>
                 </div>
 
                 <div class="other__link">

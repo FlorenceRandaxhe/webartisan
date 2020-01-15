@@ -4,7 +4,6 @@
  *
  * register nav
  */
-
 register_nav_menus(
     array(
         'main' 		=> 'main navigation',

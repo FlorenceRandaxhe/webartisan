@@ -13,6 +13,10 @@
   .jobs__list{
     margin-right: 3em;
   }
+  .jobs__filter{
+    position: sticky;
+    top:30px
+  }
 }
 .jobs__list{
   flex: 1;
@@ -20,8 +24,4 @@
 .jobs__container{
   width: 100%;
   margin-right: 3em;
-}
-.jobs__filter{
-  position: sticky;
-  top:30px
 }

@@ -3,7 +3,7 @@
     Template Name: Ressources
 */
 get_header();
-
+$ress = new WP_Query(['post_type'=>'ressources','order'=>'DESC','order_by'=>'date']);
 ?>
     <main class="ressources main--top main--bottom">
         <section class="section__ressources">
@@ -11,13 +11,7 @@ get_header();
                 Ressources d'autres sites
             </h2>
             <div class="ressources__container ressources__parent">
-            <?php
-            $ress = new WP_Query([
-                'post_type'=>'ressources',
-                'order'=>'DESC',
-                'order_by'=>'date'
-            ]);
-            if ($ress->have_posts()) : while ($ress->have_posts()) : $ress->the_post(); ?>
+            <?php if ($ress->have_posts()) : while ($ress->have_posts()) : $ress->the_post(); ?>
                 <article class="ressources__content">
                     <p><time datetime="c" class="ressources__date"><?= get_the_date() ?></time></p>
                     <h3 aria-level="3" role="heading" class="ressources__title">
@@ -27,9 +21,17 @@ get_header();
                         <a href="<?php the_field('site_url'); ?>"><?php the_field('site_name'); ?></a>
                     </p>
                     <p class="ressources__excerpt"><?php the_field('excerpt'); ?></p>
-                    <a href="<?php the_field('link'); ?>" class="button__more--arrow">
-                        Voir l'article<span class="sr_only"><?php the_title();?></span>
-                    </a>
+                
+                        <a href="<?php the_field('link'); ?>" class="button__more--arrow">
+                                Lire l'article<span class="sr_only"><?php the_title(); ?></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="14.82" viewBox="0 0 30 14.82">
+                                    <g id="arrow-right" transform="translate(1 1.41)">
+                                        <path id="Tracé_6" data-name="Tracé 6" d="M-12,0H14" transform="translate(12 6)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                        <path id="Tracé_5" data-name="Tracé 5" d="M12,6l7,6-7,6" transform="translate(9 -6)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                    </g>
+                                </svg>
+                            </a>
+                   
                     <?php $tags = get_the_terms( $ress->ID, 'tagres' );
                     if ($tags):?>
                         <div class="tags">
@@ -42,7 +44,17 @@ get_header();
                         </div>
                     <?php endif;?>
                 </article>
-            <?php endwhile; else: ?>
+            <?php endwhile; ?>
+            <div class="pagination_links">
+                    <?= paginate_links(array(
+                        'total' => $thread->max_num_pages,
+                        'end_size' => 1,
+                        'mid_size' => 3,
+                        'prev_text' => 'Précédent',
+                        'next_text' => 'Suivant',
+                    )); ?>
+                </div>
+            <?php else: ?>
                 <div class="section__empty">
                     <p>Il n'y a pas de ressources pour le moment&nbsp;!</p>
                 </div>

@@ -12,8 +12,8 @@ get_header();
         </h2>
         <div class="taxo__parent">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                <article class="taxo__container">
-                    <div class="taxo__content">
+                <article class="taxo__container tuto tuto__content">
+                    <div class="taxo__content ">
                         <?php if ( has_post_thumbnail() ): ?>
                             <div>
                                 <figure class="single__post__img" >
@@ -25,17 +25,23 @@ get_header();
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         </h3>
                         <div>
-                            <p>Publié le <time datetime="c" class="post__date"><?= get_the_date(); ?></time></p>
+                            <p class="tuto__date">Publié le <time datetime="c" class="post__date"><?= get_the_date(); ?></time></p>
                         </div>
-                        <div class="post__author">
+                        <div class="highlight">
                             <?php the_author_posts_link(); ?>
                         </div>
                         <div class="post__excerpt">
                             <?php the_excerpt(); ?>
                         </div>
                         <div class="post__link">
-                            <a href="<?php the_permalink(); ?>" class="button__more--arrow">
-                                Lire plus <span class="sr_only">sur <?php the_title(); ?></span>
+                           <a href="<?php the_permalink(); ?>" class="button__more--arrow">
+                                Lire plus<span class="sr_only">sur <?php the_title(); ?></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="14.82" viewBox="0 0 30 14.82">
+                                    <g id="arrow-right" transform="translate(1 1.41)">
+                                        <path id="Tracé_6" data-name="Tracé 6" d="M-12,0H14" transform="translate(12 6)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                        <path id="Tracé_5" data-name="Tracé 5" d="M12,6l7,6-7,6" transform="translate(9 -6)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                    </g>
+                                </svg>
                             </a>
                         </div>
                         <?php $tags = get_the_terms( $articles->ID, 'tagpost' );

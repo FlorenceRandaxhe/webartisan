@@ -59,8 +59,7 @@
   }
 }
 .nav__link:after{
-  content: '';
-  position: absolute;
+  @include pseudo;
   height: 3px;
   width: 0;
   top:95%;
@@ -74,7 +73,8 @@
   width: 25px;
 }
 
-.nav__link:hover:after, .nav__link:focus:after{
+.nav__link:hover:after, 
+.nav__link:focus:after{
   transition: 0.3s;
   width: 80%;
 }
@@ -158,7 +158,8 @@
         color: $black;
       }
     }
-    .nav__link:hover:after, .nav__link:focus:after{
+    .nav__link:hover:after, 
+    .nav__link:focus:after{
       background-color: $black;
     }
   }

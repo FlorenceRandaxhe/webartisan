@@ -22,7 +22,6 @@ get_header();
                                 <label for="subject_forum" class="form__label form__label--block">Sujet</label>
                                 <input type="text" id="subject_forum" name="subject_forum" class="input--wide">
                             </div>
-                            <!-- ajout de catégorie ne marche pas -->
                             <div class="b">
                                 <?php if($forumForm->errors['taxo_forum']): ?>
                                     <div>
@@ -33,8 +32,8 @@ get_header();
                                     <legend>Catégorie</legend>
                                 <?php foreach ($tax_terms as $tax_term):?>
                                 <div class="resolved__form__chackbox">
-                                    <input  class="input__radio" type="radio" name="taxo_forum" id="taxo_<?= $tax_term->name;?>" value="<?= $tax_term->name;?>">
-                                    <label for="taxo_<?= $tax_term->name;?>" class="form__label form__label--radio"><?= $tax_term->name;?></label>
+                                    <input  class="input__radio" type="radio" name="taxo_forum" id="taxo_<?= $tax_term->slug;?>" value="<?= $tax_term->name;?>">
+                                    <label for="taxo_<?= $tax_term->slug;?>" class="form__label form__label--radio"><?= $tax_term->name;?></label>
                                 </div>
                                 <?php endforeach;?>
                                 </fieldset>
@@ -60,12 +59,12 @@ get_header();
                     </div>
                     <div>
                         <div class="login__form">
-                            <?php wp_login_form(array( 'redirect' => 'http://localhost' . $_SERVER['REQUEST_URI'], ) ); ?>
+                            <?php wp_login_form(array( 'redirect' => home_url() . $_SERVER['REQUEST_URI'], ) ); ?>
                         </div>
 
                         <div class="other__link">
-                            <a href="<?= wa_get_page_url('template-register.php') ;?>">Me créer un compte</a>
-                            <a href="<?= wp_lostpassword_url(); ?>">Mot de passe oublié !</a>
+                            <a class="highlight" href="<?= wa_get_page_url('template-register.php') ;?>">Me créer un compte</a>
+                            <a class="highlight" href="<?= wp_lostpassword_url(); ?>">Mot de passe oublié !</a>
                         </div>
                     </div>
                 <?php endif;?>

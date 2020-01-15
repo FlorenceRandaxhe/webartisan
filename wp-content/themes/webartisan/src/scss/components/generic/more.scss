@@ -41,22 +41,18 @@
 }
 // ressources
 .post__other{
+  svg{
+    stroke:#4F4F4F;
+    margin-right: 0.25em;
+  }
+  .button__more--arrow{
+    font-size: 16px;
+  }
+
+}
   .post__other__container{
     padding: 1em 0;
   }
   .more__list__item{
     padding: 0.25em 1em;
   }
-  svg{
-    stroke:#4F4F4F;
-    margin-right: 0.25em;
-  }
-// RESPONSIVE PAS OK !!!!!
-  .button__more--arrow{
-    font-size: 16px;
-    &:after{
-      background-size: 50% 100%;
-    }
-  }
-
-}

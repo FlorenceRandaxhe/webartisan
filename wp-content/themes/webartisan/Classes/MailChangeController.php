@@ -8,34 +8,15 @@
 
 class MailChangeController
 {
-    /**
-     * $_POST
-     *
-     *@var array
-     */
-    protected $input;
 
-    /**
-     * The encountered validation errors
-     *
-     *@var array
-     */
+    protected $input;
     public $errors = [];
 
-    /**
-     * Create a new controller instance
-     *
-     *@param array $input
-     */
     function __construct($input)
     {
         $this->input = $input;
         $this->handle();
     }
-
-    /**
-     *Bootstrap the validation & saving of sent data
-     */
 
     protected function handle()
     {
@@ -50,7 +31,6 @@ class MailChangeController
     /**
      * Validate the required data
      */
-
     protected function validate()
     {
         $values  = [];
@@ -64,17 +44,16 @@ class MailChangeController
      * @param $attribute
      * @return string|null
      */
-
     protected function check_valid($attribute)
     {
         return htmlspecialchars($this->input[$attribute]);
     }
+
     /**
      * Check if email is valid
      * @param $attribute
      * @return string|null
      */
-
     protected function check_email($attribute)
     {
         if (!$this->input[$attribute])
@@ -97,11 +76,11 @@ class MailChangeController
 
         return htmlspecialchars($this->input[$attribute]);
     }
+
     /**
      * Save the given values using the post_type
      *@param array $values
      */
-
     protected function save($values)
     {
        wp_update_user( array(

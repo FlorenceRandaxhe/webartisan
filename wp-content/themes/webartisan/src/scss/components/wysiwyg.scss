@@ -41,13 +41,25 @@
     font-style: italic;
   }
   a{
-    color: $darkBlue;
-    border-bottom: 1px solid $darkBlue;
-    transition: 0.3s;
-    &:hover{
-      color: $white;
-      background-color: $darkBlue;
-      transition: 0.3s;
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    &::after {
+      @include pseudo;
+      z-index: -1;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 3px;
+      background-color:$yellow;
+      transition: all 250ms;
+    }
+    &:hover {
+      &::after {
+        height: 60%;
+        width: 105%;
+      }
     }
   }
   blockquote{
@@ -73,7 +85,7 @@
       }
     }
   }
-
+}
   div.syntaxhighlighter{
     border-radius: 3px;
   }
@@ -83,5 +95,3 @@
       padding: 3px 0 !important;
     }
   }
-
-}

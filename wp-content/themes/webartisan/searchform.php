@@ -1,5 +1,5 @@
 <form class="icon__align" id="searchform" method="get" action="<?= home_url('/'); ?>">
-    <label class="search__label" for="search">
+    <label class="search__label" for="s">
         <span class="sr_only">Rechercher</span>
     </label>
     <input type="search" class="search-field" name="s" id="s" placeholder="Rechercher" value="<?php the_search_query(); ?>">

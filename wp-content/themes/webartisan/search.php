@@ -6,22 +6,8 @@ global $wp_query;
 $currentPage = get_query_var('paged');
 $s = get_search_query();
 $post_types = array('articles', 'forum', 'tutoriels', 'emplois');
-/*$args = array(
-    'post_type' => array('articles', 'forum', 'tutoriels'),
-    's' => $s,
-    'orderby' => 'post_type',
-    'order' => 'ASC',
-    'posts_per_page' => 10, 'paged' => $currentPage
-);
-$query = new WP_Query( $args );*/
 get_header();
-
 ?>
-<!--
-    Les résultats des recherche doivent dépendre de la page sur lequelle on se trouve !!
-    si on fait une recherche sur la page forum, il faut en priorité les résultats qui proviennent du forum
-    AVOIR L'INTEGRALITE CLIQUABLE
--->
     <main class="search ">
         <section class="section__search">
 

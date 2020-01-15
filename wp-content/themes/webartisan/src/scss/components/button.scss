@@ -43,6 +43,10 @@
   font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 1px;
+  &:hover{
+    box-shadow:$big_shadow;
+    transision:0.3s;
+  }
 }
 
 .category--trans a{
@@ -73,6 +77,10 @@
   font-size: 0.825em;
   text-transform: uppercase;
   letter-spacing: 1px;
+    &:hover{
+    box-shadow:$big_shadow;
+    transision:0.3s;
+  }
 }
 
 .category--green a{
@@ -83,6 +91,10 @@
   font-size: 0.825em;
   text-transform: uppercase;
   letter-spacing: 1px;
+    &:hover{
+    box-shadow:$big_shadow;
+    transision:0.3s;
+  }
 }
 
 .category--yellow a{
@@ -94,6 +106,10 @@
   font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 1px;
+  &:hover{
+  box-shadow:$big_shadow;
+  transision:0.3s;
+}
 }
 .button__container{
   text-align: center;

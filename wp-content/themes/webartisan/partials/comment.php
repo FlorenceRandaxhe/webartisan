@@ -8,6 +8,7 @@
                 </div>
             <?php endif;?>
             <?php comments_template( '/regular-comments.php' ); ?>
+            
         </div>
         <?php if( ! is_user_logged_in()):?>
             <div class="section__info section__info--alert">
@@ -15,7 +16,7 @@
             </div>
             <div>
                 <div class="login__form">
-                    <?php wp_login_form(array( 'redirect' => 'http://localhost' . $_SERVER['REQUEST_URI'] . '#respond', ) ); ?>
+                    <?php wp_login_form(array( 'redirect' => home_url() . $_SERVER['REQUEST_URI'] . '#respond', ) ); ?>
                 </div>
                 <div class="other__link">
                     <a href="<?= wa_get_page_url('template-register.php') ;?>">Me créer un compte</a>

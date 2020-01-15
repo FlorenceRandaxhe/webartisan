@@ -96,43 +96,6 @@ $breakpoints: (
     }
 }
 
-// animation
-@mixin keyframes($animation-name)
-{
-    @-webkit-keyframes #{$animation-name}
-    {
-        @content;
-    }
-    @-moz-keyframes #{$animation-name}
-    {
-        @content;
-    }
-    @-ms-keyframes #{$animation-name}
-    {
-        @content;
-    }
-    @-o-keyframes #{$animation-name}
-    {
-        @content;
-    }
-    @keyframes #{$animation-name}
-    {
-        @content;
-    }
-}
-
-@mixin animation($str)
-{
-    -webkit-animation: #{$str};
-    -moz-animation: #{$str};
-    -ms-animation: #{$str};
-    -o-animation: #{$str};
-    animation: #{$str};
-}
-
-$timing: 0.3s;
-
-
 
 @mixin reset-input-styles{
   -webkit-appearance: none;
@@ -140,8 +103,5 @@ $timing: 0.3s;
   overflow: hidden;
   border-radius: 0; 
   max-width: 100%; 
-  cursor: initial; 
   outline: none; 
-  padding: 0; 
-  border: 0; 
 }

@@ -2,25 +2,11 @@
 
 class ContactFormController
 {
-    /**
-     * $_POST
-     *
-     *@var array
-     */
+    
     protected $input;
-
-    /**
-     * The encountered validation errors
-     *
-     *@var array
-     */
     public $errors = [];
 
-    /**
-     * Create a new controller instance
-     *
-     *@param array $input
-     */
+   
     function __construct($input)
     {
         $this->input = $input;
@@ -31,7 +17,6 @@ class ContactFormController
     /**
      *Bootstrap the validation & saving of sent data
      */
-
     protected function handle()
     {
         $values = $this->validate();
@@ -45,7 +30,6 @@ class ContactFormController
      * Validate the required data
      * @return array
      */
-
     protected function validate()
     {
         $values  = [];
@@ -62,7 +46,6 @@ class ContactFormController
      * @param $attribute
      * @return string|null
      */
-
     protected function check_valid($attribute)
     {
         if ($this->input[$attribute] ?? null)
@@ -93,7 +76,6 @@ class ContactFormController
      * @param $attribute
      * @return string|null
      */
-
     protected function check_email($attribute)
     {
         if (filter_var($this->input[$attribute], FILTER_VALIDATE_EMAIL))
@@ -107,7 +89,6 @@ class ContactFormController
      * Save data and send the contact email
      *@param array $values
      */
-
     protected function save($values)
     {
         $mailHeaders = "From: " . $values['name'] . "<" . $values['email'] . ">\r\n";

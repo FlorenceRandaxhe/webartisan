@@ -21,12 +21,13 @@
   @include mq('tablet'){
     display: flex;
   }
-  .thread__author{
-    font-weight: 500;
-  }
+
   p{
     padding-bottom: 0.5em;
   }
+}
+.thread__author{
+  font-weight: 500;
 }
 .single__thread__meta{
   margin-right: 2em;
@@ -43,18 +44,6 @@
 }
 
 .syntax__codes{
-  p{
-    font-size: 18px;
-    padding-bottom: 0.5em;
-  }
-  ul{
-    margin-left: 2em;
-  }
-  &__item{
-    list-style: disc;
-    padding-bottom: 5px;
-    span{
-      font-weight: 500;
-    }
-  }
+  font-size: 18px;
+  padding-bottom: 0.5em;
 }

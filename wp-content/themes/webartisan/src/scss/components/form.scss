@@ -69,23 +69,21 @@
   position: relative;
 }
 .switch:before {
-  content: '';
+  @include pseudo;
   width: 40px;
   height: 22px;
   border-radius: 20px;
   transition: all 0.3s;
-  position: absolute;
   background-color: #d8d8d8;
   top: 0;
   right: 0;
 }
 .switch:after {
-  content: '';
+  @include pseudo;
   width: 18px;
   height: 18px;
   border-radius: 100%;
   transition: all 0.3s;
-  position: absolute;
   background-color: #fff;
   top: 2px;
   right: 20px;
@@ -105,7 +103,7 @@ input[type='checkbox']:checked +.switch:before {
 /*****************filter tuto / forum *******************/
 
 @media only screen and (min-width:50em) {
-  .section__filter form{
+  .section__filter__form{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -127,68 +125,62 @@ input[type='checkbox']:checked +.switch:before {
   border-radius: 3px;
   background-color: #f5f7f8;
   border: 2px solid $green;
-  &__form{
+}
+.is__thread__resolved__form{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
   }
-  .resolved__form__chackbox {
-    position: relative;
-  }
-  .form__label{
-    margin-left: 35px;
-  }
-  .form__label:before {
-    content: '';
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
-    transition: all 0.3s;
-    position: absolute;
-    background-color: #d8d8d8;
-    top: 2px;
-    left: 0;
-  }
-  .form__label:after {
-    content: '';
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
-    transition: all 0.3s;
-    position: absolute;
-    background-color: #d8d8d8;
-    top: 7px;
-    left: 5px;
-  }
-  .checkbox {
-    position: absolute;
-    left: -9999px;
-  }
-  input[type='checkbox']:checked +.form__label:before {
-    background-color: $darkBlue;
-  }
+.resolved__form__chackbox {
+  position: relative;
+}
+.form__resolved__label{
+  margin-left: 35px;
+}
+.form__resolved__label:before {
+  @include pseudo;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  transition: all 0.3s;
+  background-color: #d8d8d8;
+  top: 2px;
+  left: 0;
+}
+.form__resolved__label:after {
+  @include pseudo;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  transition: all 0.3s;
+  background-color: #d8d8d8;
+  top: 7px;
+  left: 5px;
+}
+.resolved__form__input {
+  position: absolute;
+  left: -9999px;
+}
+.resolved__form__input:checked +.form__resolved__label:before {
+  background-color: $darkBlue;
 }
 
 /**********************************************************/
 /************* new job form **********************/
 .job__add {
-  .button--blue{
-    margin-top: 2em;
-  }
-  form{
-    padding-top: 2em;
-  }
-  &__intro{
-    font-size: 1.5em;
-  }
   .input--wide{
     width: 95%;
   }
-  fieldset div{
-    padding: 0.5em 0;
-  }
-
+}
+.job__add__intro{
+  font-size: 1.5em;
+}
+.job__add__fieldset__div{
+  padding: 0.5em 0;
+}
+.job__add__btn, .job__add__form{
+  margin-top: 2em;
 }
 
 .resolved__form__chackbox {
@@ -199,23 +191,21 @@ input[type='checkbox']:checked +.switch:before {
   margin-left: 30px;
 }
 .form__label--radio:before {
-  content: '';
+  @include pseudo;
   width: 18px;
   height: 18px;
   border-radius: 100%;
   transition: all 0.3s;
-  position: absolute;
   border: 1px solid $darkBlue;
   top: 11px;
   left: 0;
 }
 .form__label--radio:after {
-  content: '';
+  @include pseudo;
   width: 10px;
   height: 10px;
   border-radius: 100%;
   transition: all 0.3s;
-  position: absolute;
   background-color: $white;
   left: 4px;
   top: 15px;
@@ -235,28 +225,30 @@ input[type='radio']:checked +.form__label--radio:after {
     display: block;
     padding-bottom: 0.5em;
   }
-  .login-username, .login-password{
-    padding-bottom: 1em;
-    input{
-      width: 100%;
-    }
+}
+
+.login-username, .login-password{
+  padding-bottom: 1em;
+  input{
+    width: 100%;
   }
-  .login-remember{
-    margin-top: 1em;
-  }
-  .login-submit input{
-    background-color: $darkBlue;
-    padding: 0.75em 2em;
-    border-radius: 3px;
-    font-weight: 500;
-    color: $white;
-    font-size: 1em;
-    border: 2px solid $darkBlue;
+}
+.login-remember{
+  margin-top: 1em;
+}
+.login-submit input{
+  background-color: $darkBlue;
+  padding: 0.75em 2em;
+  border-radius: 3px;
+  font-weight: 500;
+  color: $white;
+  font-size: 1em;
+  border: 2px solid $darkBlue;
+  transition: 0.3s;
+  margin-top: 1em;
+  &:hover{
+    background-color: transparent;
+    color: $darkBlue;
     transition: 0.3s;
-    &:hover{
-      background-color: transparent;
-      color: $darkBlue;
-      transition: 0.3s;
-    }
   }
 }

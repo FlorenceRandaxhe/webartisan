@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom taxonomy
+ * Tags
  */
 function wa_add_taxo_tag() {
     /***************************************************************
@@ -18,7 +18,7 @@ function wa_add_taxo_tag() {
                 'edit_item'         => __( 'Modifier le tag', 'wa' ),
                 'update_item'       => __( 'Mettre à jour le tag', 'wa' ),
                 'add_new_item'      => __( 'Ajouter un tag', 'wa' ),
-                'new_item_name'     => __( 'Nouvelle intitulé du tag', 'wa' ),
+                'new_item_name'     => __( 'Nouvel intitulé du tag', 'wa' ),
                 'menu_name'         => __( 'Tag', 'wa' ),
             ],
             'sort'               => true,
@@ -44,7 +44,7 @@ function wa_add_taxo_tag() {
                 'edit_item'         => __( 'Modifier le tag', 'wa' ),
                 'update_item'       => __( 'Mettre à jour le tag', 'wa' ),
                 'add_new_item'      => __( 'Ajouter un tag', 'wa' ),
-                'new_item_name'     => __( 'Nouvelle intitulé du tag', 'wa' ),
+                'new_item_name'     => __( 'Nouvel intitulé du tag', 'wa' ),
                 'menu_name'         => __( 'Tag', 'wa' ),
             ],
             'sort'               => true,
@@ -70,7 +70,7 @@ function wa_add_taxo_tag() {
                 'edit_item'         => __( 'Modifier le tag', 'wa' ),
                 'update_item'       => __( 'Mettre à jour le tag', 'wa' ),
                 'add_new_item'      => __( 'Ajouter un tag', 'wa' ),
-                'new_item_name'     => __( 'Nouvelle intitulé du tag', 'wa' ),
+                'new_item_name'     => __( 'Nouvel intitulé du tag', 'wa' ),
                 'menu_name'         => __( 'Tag', 'wa' ),
             ],
             'sort'               => true,

@@ -2,32 +2,16 @@
 
 class NewJobFormController
 {
-    /**
-     * $_POST
-     *
-     *@var array
-     */
-    protected $input;
 
-    /**
-     * The encountered validation errors
-     *@var array
-     */
+    protected $input;
     public $errors = [];
 
-    /**
-     * Create a new controller instance
-     *@param array $input
-     */
     function __construct($input)
     {
         $this->input = $input;
         $this->handle();
     }
 
-    /**
-     *Bootstrap the validation & saving of sent data
-     */
     protected function handle()
     {
         $values = $this->validate();
@@ -206,6 +190,12 @@ class NewJobFormController
             set_post_thumbnail( $post_id, $upload_id );
 
         }
+
+          // send mail to admin
+        $mailHeaders = "Nouvelle offre d\'emploi";
+        $message = 'Nouvelle offre d\'emploi de ' . $values['agency'] . ' sur votre site Web Artisan';
+        $subject = 'Web Artisan - nouvelle offre d\'emploi';
+        mail("randaxhe.florence@gmail.com", $subject, $message, $mailHeaders);
 
     }
 }

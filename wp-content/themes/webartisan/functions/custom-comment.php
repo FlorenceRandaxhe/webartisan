@@ -1,19 +1,20 @@
 <?php
+
 /******************************
- *
  * Custom comment list template
  */
+
 if( ! function_exists( 'comment_template' ) ):
     function comment_template( $comment, $args, $depth )
     {
-        ?>
+?>
     <li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
         <div class="comment__content">
             <div class="comment__content__img">
-                <?= get_avatar( $comment,$size='80',$default='', $alt='Photo de profil' ); ?>
+                <?= get_avatar( $comment, $size='80',$default='', $alt='Photo de profil' ); ?>
             </div>
             <div class="comment__content__body">
-                <?php if ($comment->comment_approved == '0') : ?>
+                <?php if ( $comment->comment_approved == '0' ) : ?>
                     <em>Votre commentaire est en attende de modération</em>
                 <?php endif; ?>
                 <div class="comment__meta">
@@ -30,7 +31,8 @@ if( ! function_exists( 'comment_template' ) ):
                 </div>
             </div>
         </div>
+<?php
 
-        <?php
     }
+
 endif;

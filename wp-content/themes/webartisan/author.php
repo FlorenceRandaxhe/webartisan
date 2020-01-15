@@ -53,7 +53,6 @@ get_header(); ?>
                                         <?php endif ;?>
                                     </h4>
                                     <div class="post__author">
-                                        <!-- Ramène vers la page auteur mais les users du forum ne sont pas des auteurs !!!  -->
                                         <?php the_author_posts_link(); ?>
                                     </div>
                                     <div class="thread__excerpt">
@@ -63,7 +62,6 @@ get_header(); ?>
                                 <span class="category--white icon__align">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="13.414" viewBox="0 0 21 13.414"><g transform="translate(0.5 0.707)"><path d="M16,18l6-6L16,6" transform="translate(-2 -6)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><path d="M8,6,2,12l6,6" transform="translate(-2 -6)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g>
                                     </svg>
-                                    <!-- quand on clique dessus, ça doit montrer que les résultats du forum -->
                                     <span><?php the_field('taxo');?></span>
                                 </span>
                                         <?php if ( !wp_count_comments(get_the_ID())->approved == 0):?>
@@ -78,10 +76,6 @@ get_header(); ?>
                                             </time>
                                         <?php endif;?>
                                         <div class="comments__count thread__comment">
-                                            <!--
-                                              Amélioration (pas urgent) lorsqu'on clique sur le bulle, on voit les réponses
-                                              qui on été données (AJAX)
-                                           -->
                                             <a class="icon__align" href="<?php the_permalink(); ?>#anchor__comment">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4f4f4f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                                                 <span><?= wp_count_comments(get_the_ID())->approved; ?></span>

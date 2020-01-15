@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom taxonomy
+ * Category
  */
 function wa_add_taxo_category() {
     /***************************************************************
@@ -17,7 +17,7 @@ function wa_add_taxo_category() {
             'edit_item'         => __( 'Modifier la catégorie', 'wa' ),
             'update_item'       => __( 'Mettre à jour la catégorie', 'wa' ),
             'add_new_item'      => __( 'Ajouter une catégorie', 'wa' ),
-            'new_item_name'     => __( 'Nouvelle intitulé de la catégorie', 'wa' ),
+            'new_item_name'     => __( 'Nouvel intitulé de la catégorie', 'wa' ),
             'menu_name'         => __( 'Catégorie', 'wa' ),
         ],
         'hierarchical'      => true,
@@ -41,7 +41,7 @@ function wa_add_taxo_category() {
             'edit_item'         => __( 'Modifier la catégorie', 'wa' ),
             'update_item'       => __( 'Mettre à jour la catégorie', 'wa' ),
             'add_new_item'      => __( 'Ajouter une catégorie', 'wa' ),
-            'new_item_name'     => __( 'Nouvelle intitulé de la catégorie', 'wa' ),
+            'new_item_name'     => __( 'Nouvel intitulé de la catégorie', 'wa' ),
             'menu_name'         => __( 'Catégorie', 'wa' ),
         ],
         'hierarchical'      => true,
@@ -67,7 +67,7 @@ function wa_add_taxo_category() {
             'edit_item'         => __( 'Modifier le langage', 'wa' ),
             'update_item'       => __( 'Mettre à jour le langage', 'wa' ),
             'add_new_item'      => __( 'Ajouter un langage', 'wa' ),
-            'new_item_name'     => __( 'Nouvelle intitulé du langage', 'wa' ),
+            'new_item_name'     => __( 'Nouvel intitulé du langage', 'wa' ),
             'menu_name'         => __( 'Langage', 'wa' ),
         ],
         'hierarchical'      => true,
@@ -93,7 +93,7 @@ function wa_add_taxo_category() {
             'edit_item'         => __( 'Modifier la catégorie', 'wa' ),
             'update_item'       => __( 'Mettre à jour la catégorie', 'wa' ),
             'add_new_item'      => __( 'Ajouter une catégorie', 'wa' ),
-            'new_item_name'     => __( 'Nouvelle intitulé de la catégorie', 'wa' ),
+            'new_item_name'     => __( 'Nouvel intitulé de la catégorie', 'wa' ),
             'menu_name'         => __( 'Catégorie', 'wa' ),
         ],
         'sort'               => true,
@@ -119,7 +119,7 @@ function wa_add_taxo_category() {
             'edit_item'         => __( 'Modifier la catégorie', 'wa' ),
             'update_item'       => __( 'Mettre à jour la catégorie', 'wa' ),
             'add_new_item'      => __( 'Ajouter une catégorie', 'wa' ),
-            'new_item_name'     => __( 'Nouvelle intitulé de la catégorie', 'wa' ),
+            'new_item_name'     => __( 'Nouvel intitulé de la catégorie', 'wa' ),
             'menu_name'         => __( 'Catégorie', 'wa' ),
         ],
         'sort'               => true,

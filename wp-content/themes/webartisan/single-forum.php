@@ -16,8 +16,8 @@ get_header();
                         <form action="#" method="post" class="is__thread__resolved__form">
 
                             <div class="resolved__form__chackbox">
-                                <input type="checkbox" name="thread_resolved" id="thread_resolved" class="checkbox" value="1">
-                                <label for="thread_resolved" class="form__label">Y a-t'il eu une réponse satisfaisante à votre question&nbsp;?</label>
+                                <input type="checkbox" name="thread_resolved" id="thread_resolved" class="resolved__form__input checkbox" value="1">
+                                <label for="thread_resolved" class="form__resolved__label">Y a-t'il eu une réponse satisfaisante à votre question&nbsp;?</label>
                             </div>
                             <div class="resolved__form__submit">
                                 <button class="button--green">Sujet résolu</button>
@@ -37,19 +37,19 @@ get_header();
                     $lastCommentId = $comments[0]->comment_ID;
                       ?>
                     <div class="thread__meta">
-                        <div class="post__category category--blue">
-                            <a href=""><?php the_field('taxo');?></a>
+                        <div class="post__category category--white">
+                            <?php the_field('taxo');?>
                         </div>
                         <?php if ( !wp_count_comments(get_the_ID())->approved == 0):?>
-                            <time datetime="c" class="thread__date icon__align">
+                            <div class="thread__date icon__align">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14"><g transform="translate(0.5 0.5)"><rect width="12" height="12" rx="2" transform="translate(0 1)" stroke-width="1" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line y2="3" transform="translate(8)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line y2="3" transform="translate(3)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line x2="12" transform="translate(0 5)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g></svg>
                                 <span>Dernière réponse&nbsp;: <time datetime="c"><?= get_comment_date($d = 'j F Y', $lastCommentId) ?></time></span>
-                            </time>
+                            </div>
                         <?php else:?>
-                            <time datetime="c" class="thread__date icon__align">
+                            <div class="thread__date icon__align">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14"><g transform="translate(0.5 0.5)"><rect width="12" height="12" rx="2" transform="translate(0 1)" stroke-width="1" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line y2="3" transform="translate(8)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line y2="3" transform="translate(3)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line x2="12" transform="translate(0 5)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g></svg>
                                 <span>Sujet posté le&nbsp;: <time datetime="c"><?= get_the_date();?></time></span>
-                            </time>
+                            </div>
                         <?php endif;?>
                         <div class="comments__count">
                             <a class="icon__align" href="<?php the_permalink(); ?>#anchor__comment">
@@ -63,7 +63,7 @@ get_header();
 
                         <div class="single__thread__meta">
                             <div class="thread__img">
-                                <img src="<?= esc_url( get_avatar_url( get_the_author_meta('ID') ) ); ?>">
+                                <img src="<?= esc_url( get_avatar_url( get_the_author_meta('ID') ) ); ?>" alt="<?php the_author() ?>">
                             </div>
                         </div>
                         <div>
@@ -104,7 +104,7 @@ get_header();
                                     <h3 aria-level="3" role="heading" class="aside__post__title">
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     </h3>
-                                    <p class="thread__date">Par <span class="post__author"><?php the_author_posts_link(); ?></span>, le <time datetime="c"><?= get_the_date(); ?></time</p>
+                                    <p class="thread__date">Par <span class="highlight"><?php the_author_posts_link(); ?></span>, le <time datetime="c"><?= get_the_date(); ?></time></p>
                                     <div class="thread__excerpt">
                                         <?php the_excerpt(); ?>
                                     </div>

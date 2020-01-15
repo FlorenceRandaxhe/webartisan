@@ -4,14 +4,14 @@
  */
 get_header();
 $currentPage = get_query_var('paged');
-$tuto = new WP_Query(array('post_type'=>'tutoriels', 'order'=>'DESC', 'order_by'=>'date', 'posts_per_page' => 3, 'paged' => $currentPage));
+$tuto = new WP_Query(array('post_type'=>'tutoriels', 'order'=>'DESC', 'order_by'=>'date', 'posts_per_page' => 15, 'paged' => $currentPage));
 tuto_filter($tuto);
 ?>
 <main class="tutos main--top main--bottom">
     <section class="section__tuto">
         <h2 aria-level="2" role="heading" class="section__tuto__title sr_only">Tous les tutoriels</h2>
         <div class="section__filter">
-            <form action="#result" method="get">
+            <form class="section__filter__form" action="#result" method="get">
                 <div>
                     <label for="type" class="sr_only form__label">Type</label>
                     <select name="type" id="type" class="select--wide">
@@ -60,14 +60,14 @@ tuto_filter($tuto);
                             <h3 aria-level="3" role="heading" class="tuto__title">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h3>
-                            <div class="post__author">
+                            <div class="highlight">
                                 <?php the_author_posts_link(); ?>
                             </div>
-                            <p><time datetime="c" class="post__date"><?= get_the_date() ?></time></p>
+                            <p class="tuto__date"><time datetime="c" class="post__date"><?= get_the_date() ?></time></p>
                             <div class="tuto__excerpt">
-                                <p>
+                               
                                     <?php the_excerpt(); ?>
-                                </p>
+                            
                             </div>
                             <div class="tuto__meta">
                                 <div class="category category--green">

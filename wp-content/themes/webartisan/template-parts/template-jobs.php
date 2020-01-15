@@ -4,7 +4,7 @@
 */
 get_header();
 $currentPage = get_query_var('paged');
-$jobs = new WP_Query(array('post_type'=>'emplois', 'order'=>'DESC', 'order_by'=>'date', 'posts_per_page' => 4, 'paged' => $currentPage));
+$jobs = new WP_Query(array('post_type'=>'emplois', 'order'=>'DESC', 'order_by'=>'date', 'posts_per_page' => 15, 'paged' => $currentPage));
 job_filter( $jobs );
 ?>
     <main class="jobs main--top main--bottom">
@@ -33,7 +33,7 @@ job_filter( $jobs );
                             <div class="form__checkbox">
                                 <input type="checkbox" name="partTime" id="partTime" class="checkbox" value="Temps partiel">
                                 <label for="partTime" class="form__label switch">Temps partiel</label>
-                            </div class="form__checkbox">
+                            </div>
                             <div class="form__checkbox">
                                 <input type="checkbox" name="internship" id="internship" class="checkbox" value="Stage">
                                 <label for="internship" class="form__label switch">Stage</label>

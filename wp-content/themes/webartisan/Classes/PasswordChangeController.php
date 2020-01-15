@@ -8,34 +8,15 @@
 
 class PasswordChangeController
 {
-    /**
-     * $_POST
-     *
-     *@var array
-     */
-    protected $input;
 
-    /**
-     * The encountered validation errors
-     *
-     *@var array
-     */
+    protected $input;
     public $errors = [];
 
-    /**
-     * Create a new controller instance
-     *
-     *@param array $input
-     */
     function __construct($input)
     {
         $this->input = $input;
         $this->handle();
     }
-
-    /**
-     *Bootstrap the validation & saving of sent data
-     */
 
     protected function handle()
     {

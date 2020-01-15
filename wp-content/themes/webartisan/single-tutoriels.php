@@ -8,7 +8,7 @@ get_header();
 		<section class="section__single__tuto">
 			<div class="tuto__main">
                 <div class="post__header">
-                    <p>Publié le <time datetime="c" class="post__date"><?= get_the_date() ?></time> par <span class="post__author"><?php the_author_posts_link(); ?></span></p>
+                    <p>Publié le <time datetime="c" class="post__date"><?= get_the_date() ?></time> par <span class="highlight"><?php the_author_posts_link(); ?></span></p>
                 </div>
                 <div class="tuto__meta">
                     <div class="post__category category--blue">

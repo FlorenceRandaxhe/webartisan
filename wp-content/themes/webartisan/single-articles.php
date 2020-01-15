@@ -19,7 +19,7 @@ get_header();
                 <div class="post__main">
                     <div class="post__article">
                         <div class="post__header">
-                            <p>Publié le <time datetime="c" class="post__date"><?= get_the_date() ?></time> par <span class="post__author"><?php the_author_posts_link(); ?></span></p>
+                            <p>Publié le <time datetime="c" class="post__date"><?= get_the_date() ?></time> par <span class="highlight"><?php the_author_posts_link(); ?></span></p>
                         </div>
                         <div class="post__excerpt">
                             <?php the_excerpt();?>
@@ -91,7 +91,6 @@ get_header();
                                 <?php if ( has_post_thumbnail() ): ?>
                                     <div class="img__container">
                                         <figure>
-                                            <a href="<?php the_permalink();?>"></a>
                                             <img src="<?php the_post_thumbnail_url('small-thumb'); ?>" alt="<?php the_title(); ?>" width="143" height="100">
                                         </figure>
                                     </div>
@@ -100,13 +99,13 @@ get_header();
                                     <h3 aria-level="3" role="heading" class="aside__post__title">
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     </h3>
-                                    <div class="post__author">
+                                    <div class="highlight">
                                         <?php the_author_posts_link(); ?>
                                     </div>
                                 </div>
                             </article>
                         <?php endwhile; ?>
-                            <a href="<?= wa_get_page_url('template-blog.php') ?>">Tous les derniers articles</a>
+                            <a class="aside__link" href="<?= wa_get_page_url('template-blog.php') ?>">Tous les derniers articles</a>
                         <?php endif; ?>
                         </div>
                     </aside>
@@ -128,7 +127,6 @@ get_header();
                                 <?php if ( has_post_thumbnail() ): ?>
                                     <div class="img__container">
                                         <figure>
-                                            <a href="<?php the_permalink();?>"></a>
                                             <img src="<?php the_post_thumbnail_url('small-thumb'); ?>" alt="<?php the_title(); ?>" width="143" height="100">
                                         </figure>
                                     </div>
@@ -137,13 +135,13 @@ get_header();
                                     <h3 aria-level="3" role="heading" class="aside__post__title">
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     </h3>
-                                    <div class="post__author">
+                                    <div class="highlight">
                                         <?php the_author_posts_link(); ?>
                                     </div>
                                 </div>
                             </article>
                             <?php endwhile; ?>
-                            <a href="<?= get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">Tous les articles du même auteur</a>
+                            <a class="aside__link" href="<?= get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">Tous les articles du même auteur</a>
                             <?php endif; ?>
                         </div>
                     </aside>
@@ -169,7 +167,6 @@ get_header();
                                 <?php if ( has_post_thumbnail() ): ?>
                                     <div class="img__container">
                                         <figure>
-                                            <a href="<?php the_permalink();?>"></a>
                                             <img src="<?php the_post_thumbnail_url('small-thumb'); ?>" alt="<?php the_title(); ?>" width="143" height="100">
                                         </figure>
                                     </div>
@@ -178,14 +175,14 @@ get_header();
                                     <h3 aria-level="3" role="heading" class="aside__post__title">
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     </h3>
-                                    <div class="post__author">
+                                    <div class="highlight">
                                         <?php the_author_posts_link(); ?>
                                     </div>
                                 </div>
                             </article>
                         <?php endwhile;?>
 
-                            <a href="<?= get_term_link( $slug, 'categorypost' ); ?>">Tous les articles de la même catégorie</a>
+                            <a class="aside__link" href="<?= get_term_link( $slug, 'categorypost' ); ?>">Tous les articles de la même catégorie</a>
                             <?php endif; ?>
                         </div>
                     </aside>

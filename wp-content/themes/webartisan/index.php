@@ -15,10 +15,7 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
             <div class="grid__parent">
             <?php while ( $articles->have_posts() ) : $articles->the_post(); ?>
                 <article class="post grid__child">
-                    <!--
-                        REVOIR RYTHME VERTICAL
-                        IL Y A TROP D'ELEMENT QUI GERE LA HIERARCHIE VISUELLE (GRAS, MAJUSCULE)
-                    -->
+
                     <?php if ( has_post_thumbnail() ): ?>
                     <figure class="post__img" >
                         <a href="<?php the_permalink();?>">
@@ -29,13 +26,11 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
                     <div class="post__container">
                         <h3 aria-level="3" role="heading" class="post__title"><?php the_title(); ?></h3>
                         <div class="post__category category--yellow">
-                        <!--
-                            AJOUTER UN EFFET HOVER SUR LA CATEGORIE
-                        -->
+
                             <?php the_terms( $articles->ID, 'categorypost', '<span class="sr_only">Catégorie&nbsp;: </span>' ); ?>
                         </div>
                         <div class="post__meta">
-                            <div class="post__author">
+                            <div class="highlight">
                                 <?php the_author_posts_link(); ?>
                             </div>
                             <p><time datetime="c" class="post__date"><?= get_the_date() ?></time></p>
@@ -63,7 +58,6 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
                                         <path id="Tracé_5" data-name="Tracé 5" d="M12,6l7,6-7,6" transform="translate(9 -6)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                                     </g>
                                 </svg>
-
                             </a>
                         
                         </div>
@@ -73,9 +67,7 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
             <?php endwhile;?>
             </div>
             <div class="button__container">
-                <!--
-                           CHANGER LA COULEUR ET AJOUTER DU LETTER SPACING
-                    -->
+
                 <a href="<?= wa_get_page_url('template-blog.php') ?>" class="button__more--outline">Voir plus d'articles</a>
             </div>
             <?php else: ?>
@@ -97,24 +89,20 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
                 <div class="tuto__container grid__parent">
                 <?php while ( $tuto->have_posts() ) : $tuto->the_post(); ?>
                 <article class="tuto grid__child">
-                    <!--
-                          ESPACER JUSTE UN PEU PLUS
-                    -->
+ 
                     <div class="tuto__content">
                         <h3 aria-level="3" role="heading" class="tuto__title">
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         </h3>
-                        <div class="post__author">
+                        <div class="highlight">
                             <?php the_author_posts_link(); ?>
                         </div>
-                        <p><time datetime="c" class="post__date"><?= get_the_date() ?></time></p>
+                        <p class="tuto__date"><time datetime="c" class="post__date"><?= get_the_date() ?></time></p>
                         <div class="tuto__excerpt">
                             <?php the_excerpt(); ?>
                         </div>
                         <div class="tuto__meta">
-                            <!--
-                                AJOUTER UN EFFET OVER SUR LES CATEGORIES
-                            -->
+            
                             <div class="category category--green">
                                 <?php the_terms( $tuto->ID, 'categorytype' , '<span class="sr_only">Catégorie&nbsp;: </span>'); ?>
                             </div>
@@ -135,9 +123,7 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
                                 <span class="sr_only">Niveau de dificulté du tuto&nbsp;:</span>
                                 <span><?= $difficulty['label'] ?></span>
                             </div>
-                            <!--
-                                   CPAS TOUJOURS LA MEME GRAISSE
-                            -->
+            
                             <?php if ( !wp_count_comments( get_the_ID() )->approved == 0 ):?>
                                 <div class="comments__count">
                                     <a class="icon__align" href="<?php the_permalink(); ?>#anchor__comment">
@@ -159,9 +145,7 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
             <?php endwhile;?>
                 </div>
                 <div class="button__container">
-                    <!--
-                           CHANGER LA COULEUR ET AJOUTER DU LETTER SPACING
-                    -->
+    
                     <a href="<?= wa_get_page_url('template-tutos.php') ?>" class="button__more--outline">Voir tous les tutoriels</a>
                 </div>
             <?php else: ?>
@@ -184,9 +168,7 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
             <div class="featured__thread__head">
                 <h2 aria-level="2" role="heading" class="">Les derniers sujets du forum</h2>
                 <div>
-                    <!--
-                       METTRE LE BOUTTON EN UPPERCASE ET AJOUTER DU LETTER SPACING
-                    -->
+            
                     <a href="<?= wa_get_page_url('template-newForum.php') ;?>" class="button--blue">Nouveau sujet</a>
                 </div>
             </div>
@@ -207,7 +189,7 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
                             </span>
                             <?php endif ;?>
                         </h3>
-                        <div class="post__author">
+                        <div class="highlight">
                             <?php the_author_posts_link(); ?>
                         </div>
                         <div class="thread__excerpt">
@@ -220,15 +202,15 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
                             <span><?php the_field( 'taxo' );?></span>
                         </span>
                             <?php if ( !wp_count_comments( get_the_ID())->approved == 0 ):?>
-                                <time datetime="c" class="thread__date icon__align">
+                                <div class="thread__date icon__align">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14"><g transform="translate(0.5 0.5)"><rect width="12" height="12" rx="2" transform="translate(0 1)" stroke-width="1" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line y2="3" transform="translate(8)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line y2="3" transform="translate(3)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line x2="12" transform="translate(0 5)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g></svg>
                                     <span>Dernière réponse&nbsp;: <time datetime="c"><?= get_comment_date( $d = 'j F Y', $lastCommentId ) ?></time></span>
-                                </time>
+                                </div>
                             <?php else:?>
-                                <time datetime="c" class="thread__date icon__align">
+                                <div class="thread__date icon__align">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14"><g transform="translate(0.5 0.5)"><rect width="12" height="12" rx="2" transform="translate(0 1)" stroke-width="1" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line y2="3" transform="translate(8)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line y2="3" transform="translate(3)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line x2="12" transform="translate(0 5)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g></svg>
                                     <span>Sujet posté le&nbsp;: <time datetime="c"><?= get_the_date();?></time></span>
-                                </time>
+                                </div>
                             <?php endif;?>
                             <div class="comments__count thread__comment">
                                 <a class="icon__align" href="<?php the_permalink(); ?>#anchor__comment">
@@ -249,9 +231,7 @@ $thread = new WP_Query( ['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'dat
             <?php endwhile;?>
             </div>
             <div class="button__container">
-                <!--
-                            CHANGER LA COULEUR ET AJOUTER DU LETTER SPACING
-                     -->
+
                 <a href="<?= wa_get_page_url('template-forum.php') ?>" class="button__more--outline">Voir tous les sujets</a>
             </div>
             <?php else: ?>

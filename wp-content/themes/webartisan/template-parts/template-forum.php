@@ -4,19 +4,17 @@
 */
 get_header();
 $paged = get_query_var('paged');
-$thread = new WP_Query(['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'date', 'posts_per_page' => 4, 'paged' => $paged]);
+$thread = new WP_Query(['post_type'=>'forum', 'order'=>'DESC', 'order_by'=>'date', 'posts_per_page' => 15, 'paged' => $paged]);
 $tax_terms = get_terms('categoryforum', array('hide_empty' => false));
 thread_filter( $thread );
-
 
 ?>
     <main class="forum main--top main--bottom">
         <section class="section__thread">
             <h2 aria-level="2" role="heading" class="sr_only section__thread__title">Tous les sujets du forum</h2>
             <div class="section__filter">
-                <form action="#result" method="get">
+                <form class="section__filter__form" action="#result" method="get">
                     <div>
-                        <!-- compatibilité avec les autres navigateur -->
                         <label for="category" class="sr_only form__label">Catégorie</label>
                         <select name="category" id="category" class="select--wide">
                             <option value="all">Toute les catégories</option>
@@ -43,7 +41,7 @@ thread_filter( $thread );
                     <h3 aria-level="3" role="heading" class="thread__title icon__align">
                         <?php if (wp_count_comments(get_the_ID())->approved > 10):?>
                         <span class="sr_only">Sujet brulant</span>
-                            <svg class="trending__up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g><g><circle class="cls-1" cx="12" cy="12" r="12"/><polyline class="cls-2" points="20.45 7 13.19 14.72 9.13 10.9 3.41 17"/><polyline class="cls-2" points="15.72 7.15 20.45 7 20.59 11.73"/></g></g></svg>
+                            <svg class="trending__up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g><g><circle class="trending__up_cirle" fill="#d49cb5ad" cx="12" cy="12" r="12"/><polyline class="trending__up_arrow" fill="#fff" stroke="#fff" points="20.45 7 13.19 14.72 9.13 10.9 3.41 17"/><polyline class="trending__up_arrow" fill="#fff" stroke="#fff" points="15.72 7.15 20.45 7 20.59 11.73"/></g></g></svg>
                         <?php endif ;?>
                         <a href="<?php the_permalink();?>"><?php the_title();?></a>
                         <?php if( get_field('thread_resolved') == true ):?>
@@ -53,8 +51,7 @@ thread_filter( $thread );
                             </span>
                         <?php endif ;?>
                     </h3>
-                    <div class="post__author">
-                        <!-- Ramène vers la page auteur mais les users du forum ne sont pas des auteurs !!!  -->
+                    <div class="highlight">
                         <?php the_author_posts_link(); ?>
                     </div>
                     <div class="thread__excerpt">
@@ -64,25 +61,20 @@ thread_filter( $thread );
                         <span class="category--white icon__align">
                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="13.414" viewBox="0 0 21 13.414"><g transform="translate(0.5 0.707)"><path d="M16,18l6-6L16,6" transform="translate(-2 -6)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><path d="M8,6,2,12l6,6" transform="translate(-2 -6)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g>
                             </svg>
-                            <!-- quand on clique dessus, ça doit montrer que les résultats du forum -->
                             <span><?php the_field('taxo');?></span>
                         </span>
                     <?php if ( !wp_count_comments(get_the_ID())->approved == 0):?>
-                        <time datetime="c" class="thread__date icon__align">
+                        <div class="thread__date icon__align">
                             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14"><g transform="translate(0.5 0.5)"><rect width="12" height="12" rx="2" transform="translate(0 1)" stroke-width="1" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line y2="3" transform="translate(8)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line y2="3" transform="translate(3)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line x2="12" transform="translate(0 5)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g></svg>
                             <span>Dernière réponse&nbsp;: <time datetime="c"><?= get_comment_date($d = 'j F Y', $lastCommentId) ?></time></span>
-                        </time>
+                        </div>
                     <?php else:?>
-                        <time datetime="c" class="thread__date icon__align">
+                        <div class="thread__date icon__align">
                             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14"><g transform="translate(0.5 0.5)"><rect width="12" height="12" rx="2" transform="translate(0 1)" stroke-width="1" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line y2="3" transform="translate(8)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line y2="3" transform="translate(3)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line x2="12" transform="translate(0 5)" fill="none" stroke="#4f4f4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g></svg>
                             <span>Sujet posté le&nbsp;: <time datetime="c"><?= get_the_date();?></time></span>
-                        </time>
+                        </div>
                     <?php endif;?>
                         <div class="comments__count thread__comment">
-                            <!--
-                              Amélioration (pas urgent) lorsqu'on clique sur le bulle, on voit les réponses
-                              qui on été données (AJAX)
-                           -->
                             <a class="icon__align" href="<?php the_permalink(); ?>#anchor__comment">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4f4f4f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                                 <span><?= wp_count_comments(get_the_ID())->approved; ?></span>

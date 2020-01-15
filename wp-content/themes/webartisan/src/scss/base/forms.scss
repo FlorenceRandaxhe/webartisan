@@ -7,6 +7,7 @@ input, select{
   background-color: transparent;
   font-size: 1em;
   font-family: $worksans;
+  transition:0.3s;
   &:focus{
     background-color: rgba(255, 255, 255, 0.25);
     outline: none;
@@ -55,8 +56,6 @@ input[type='email'],
 input[type='password'],
 input[type='search'],
 input[type='image'] {
-    -webkit-appearance: none;
-  -moz-appearance: none;
+  @include input-placeholder;
+  @include reset-input-styles;
 }
-
-

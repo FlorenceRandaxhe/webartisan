@@ -48,7 +48,7 @@
 }
 .category--tutoriels{
   text-align: center;
-  background-color: $blue;
+  background-color: $green;
   padding: 1px 10px;
   border-radius: 3px;
   text-transform: uppercase;
@@ -56,6 +56,13 @@
 .category--forum{
   text-align: center;
   background-color: $pink;
+  padding: 1px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.category--emplois  {
+  text-align: center;
+  background-color: $blue;
   padding: 1px 10px;
   border-radius: 3px;
   text-transform: uppercase;

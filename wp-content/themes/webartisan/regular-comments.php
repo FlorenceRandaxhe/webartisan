@@ -6,14 +6,17 @@ if (have_comments()) : ?>
     <ol class="post-comments">
         <?php
         wp_list_comments(array(
+            'avatar_size' => 80,
             'style'       => 'ol',
             'short_ping' => true,
-            'callback' => 'comment_template'
+            'callback' => 'comment_template',
         ));?>
     </ol>
+    
 <?php endif;
 
 $args = array(
+    'action'                => site_url( '/wp-comments-post.php/#respond' ),
     'id_form'               => 'commentform',
     'class_form'            => 'comment-form',
     'id_submit'             => 'submit',

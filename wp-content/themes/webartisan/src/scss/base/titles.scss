@@ -3,11 +3,11 @@ h1{
   @include mq('tablet-wide') {
     font-size: 70px;
   }
-  &.home__title{
+}
+.home__title{
     text-transform: uppercase;
     font-weight: 700;
   }
-}
 h3{
   @include font (25px, $black, 400);
 }
@@ -16,9 +16,12 @@ h2{
   @include mq('tablet-wide') {
     font-size: 40px;
   }
-  &.footer__title{
-    padding: 2em 0;
-  }
+}
+.footer__title{
+  padding: 2em 0;
+}
+.tuto__title{
+  @include font(22px, $black, 400 );
 }
 .single__title{
   @include font(25px, $black, 500 );
@@ -46,10 +49,8 @@ h2{
   margin-bottom: 1em;
   position: relative;
   &:after{
-    content: '';
+    @include pseudo;
     background-image:url(../img/underline.svg);
-    display: block;
-    position: absolute;
     top:100%;
     left: 0;
     width: 60%;

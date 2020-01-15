@@ -4,7 +4,7 @@
 */
 get_header();
 $currentPage = get_query_var('paged');
-$articles = new WP_Query(['post_type'=>'articles', 'order'=>'DESC', 'order_by'=>'date', 'posts_per_page' => 9, 'paged' => $currentPage]);
+$articles = new WP_Query(['post_type'=>'articles', 'order'=>'DESC', 'order_by'=>'date', 'posts_per_page' => 15, 'paged' => $currentPage]);
 ?>
 
 <main class="blog">
@@ -14,10 +14,6 @@ $articles = new WP_Query(['post_type'=>'articles', 'order'=>'DESC', 'order_by'=>
                 <div class="grid__parent">
                 <?php while ($articles->have_posts()) : $articles->the_post(); ?>
                     <article class="post grid__child">
-                        <!--
-                            REVOIR RYTHME VERTICAL
-                            IL Y A TROP D'ELEMENT QUI GERE LA HIERARCHIE VISUELLE (GRAS, MAJUSCULE)
-                        -->
                         <?php if ( has_post_thumbnail() ): ?>
                             <figure class="post__img" >
                                 <a href="<?php the_permalink();?>">
@@ -28,27 +24,17 @@ $articles = new WP_Query(['post_type'=>'articles', 'order'=>'DESC', 'order_by'=>
                         <div class="post__container">
                             <h3 aria-level="3" role="heading" class="post__title"><?php the_title(); ?></h3>
                             <div class="post__category category--yellow">
-                                <!--
-                                    AJOUTER UN EFFET HOVER SUR LA CATEGORIE
-                                -->
                                 <?php the_terms( $articles->ID, 'categorypost', '<span class="sr_only">Catégorie&nbsp;: </span>' ); ?>
                             </div>
                             <div class="post__meta">
-                                <div class="post__author">
+                                <div class="highlight">
                                     <?php the_author_posts_link(); ?>
                                 </div>
                                 <p><time datetime="c" class="post__date"><?= get_the_date() ?></time></p>
                             </div>
                             <div class="post__excerpt">
-                                <!--
-                                    L'EXCEPT DEVRAIT PLUS RESSORTIR (AJOUTER DU MARGIN ?)
-                                -->
                                 <?php the_excerpt(); ?>
                             </div>
-                            <!--
-                                LA FLECHE EST TROP GRANDE ET LA ZONE CLIQUABLE TROP PETITE
-                                REPRENDRE LA MEME FLECHE QUE POUR LES TUTOS (SANS LE CONTOUR)
-                             -->
                             <div class="post__meta__bottom">
 
                                 <div class="comments__count">
@@ -67,11 +53,7 @@ $articles = new WP_Query(['post_type'=>'articles', 'order'=>'DESC', 'order_by'=>
                                             <path id="Tracé_5" data-name="Tracé 5" d="M12,6l7,6-7,6" transform="translate(9 -6)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                                         </g>
                                     </svg>
-
                                 </a>
-                                <!--
-                                    ZONE CLIQUABLE TROP GRANDE // TROP PROCHE DU LIEN (RISQUE D'ERREUR )
-                               -->
                             </div>
                         </div>
                     </article>

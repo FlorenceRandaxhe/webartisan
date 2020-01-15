@@ -58,7 +58,6 @@
                     <div class="header__search">
                         <?php get_search_form();?>
                     </div>
-                    <!-- REVOIR ALIGNEMENT ET DESIGN SUR FIREFOX -->
                     <div class="header__member">
                         <div class="member_icon">
                             <span class="sr_only">Membres</span>
@@ -71,7 +70,7 @@
                                 <?php else :?>
                                     <li class="member__login"><a href="<?= home_url();?>/wp-admin">Admin</a></li>
                                 <?php endif;?>
-                                    <li class="member__login"><a href="<?= wp_logout_url( 'http://localhost' . $_SERVER['REQUEST_URI'] ); ?>">Déconnecter</a></li>
+                                    <li class="member__login"><a href="<?= wp_logout_url( home_url() . $_SERVER['REQUEST_URI'] ); ?>">Déconnecter</a></li>
                             <?php endif;?>
                             <?php if( ! is_user_logged_in()):?>
                                     <li class="member__login"><a href="<?= wa_get_page_url('template-login.php');?>">Connexion</a></li>

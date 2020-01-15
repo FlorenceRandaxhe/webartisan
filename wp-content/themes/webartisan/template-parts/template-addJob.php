@@ -29,9 +29,9 @@ get_header();
 
                 <?php else:?>
                     <p class="job__add__intro">
-                        Vous pouvez poster une offre d'emploi ou de stage dans le domaine du web uniquement
+                        Vous pouvez poster une offre d'emploi ou de stage dans le domaine du web uniquement.
                     </p>
-                        <form action="#" method="post"  enctype="multipart/form-data">
+                        <form class="job__add__form" action="#" method="post"  enctype="multipart/form-data">
                              <div class="form__container">
                                  <input type="hidden" name="wa_new_job" value="<?= wa_new_job_form();?>">
 
@@ -101,19 +101,19 @@ get_header();
                                              <p><?= $newJobOffer->errors['type'];?></p>
                                          </div>
                                      <?php endif; ?>
-                                     <fieldset>
+                                     <fieldset class="job__add__fieldset">
                                          <legend class="form__label form__label--block">Type d'emploi <b>*</b></legend>
-                                         <div class="resolved__form__chackbox">
+                                         <div class="job__add__fieldset__div resolved__form__chackbox">
                                              <input type="radio" id="full_time" name="type" class="input__radio" value="Temps plein">
                                              <label for="full_time" class="form__label form__label--radio">Temps plein</label>
                                          </div>
 
-                                         <div class="resolved__form__chackbox">
+                                         <div class="job__add__fieldset__div resolved__form__chackbox">
                                              <input type="radio" id="part_time" name="type" class="input__radio" value="Temps partiel">
                                              <label for="part_time" class="form__label--radio">Temps partiel</label>
                                          </div>
 
-                                         <div class="resolved__form__chackbox">
+                                         <div class="job__add__fieldset__div resolved__form__chackbox">
                                              <input type="radio" id="internship" name="type" class="input__radio" value="Stage">
                                              <label for="internship" class="form__label--radio">Stage</label>
                                          </div>
@@ -126,7 +126,7 @@ get_header();
                                              <p><?= $newJobOffer->errors['profilepicture'];?></p>
                                          </div>
                                      <?php endif; ?>
-                                     <fieldset>
+                                     <fieldset class="job__add__fieldset">
                                          <legend class="form__label form__label--block">Logo de l'agence <b>*</b></legend>
                                          <label for="profilepicture" class="form__label">Choisir une image (jpg, jpeg, png)</label>
                                          <input type="file" id="profilepicture" name="profilepicture" class="input--image">
@@ -139,7 +139,7 @@ get_header();
                                 <p><b>*</b> : Champs obligatoires</p>
                             </div>
                              <div>
-                                 <button class="button--blue">Poster une annonce</button>
+                                 <button class="job__add__btn button--blue">Poster une annonce</button>
                              </div>
                          </form>
                 <?php endif; ?>

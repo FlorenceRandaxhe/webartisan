@@ -2,34 +2,15 @@
 
 class ForumFormController
 {
-    /**
-     * $_POST
-     *
-     *@var array
-     */
-    protected $input;
 
-    /**
-     * The encountered validation errors
-     *
-     *@var array
-     */
+    protected $input;
     public $errors = [];
 
-    /**
-     * Create a new controller instance
-     *
-     *@param array $input
-     */
     function __construct($input)
     {
         $this->input = $input;
         $this->handle();
     }
-
-    /**
-     *Bootstrap the validation & saving of sent data
-     */
 
     protected function handle()
     {
@@ -45,7 +26,6 @@ class ForumFormController
      * Validate the required data
      * @return array
      */
-
     protected function validate()
     {
         $values  = [];
@@ -60,7 +40,6 @@ class ForumFormController
      * @param $attribute
      * @return string|null
      */
-
     protected function check_valid($attribute)
     {
         if ($this->input[$attribute] ?? null)
@@ -85,11 +64,11 @@ class ForumFormController
         $this->errors[$attribute] = 'Veuillez fournir une valeur pour ce champs';
         return null;
     }
+    
     /**
      * Save the given values using the post_type
      *@param array $values
      */
-
     protected function save($values)
     {
         // create new forum thread

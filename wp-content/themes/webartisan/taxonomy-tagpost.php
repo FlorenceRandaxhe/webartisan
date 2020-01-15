@@ -27,7 +27,7 @@ get_header();
                         <div>
                             <p>Publié le <time datetime="c" class="post__date"><?= get_the_date(); ?></time></p>
                         </div>
-                        <div class="post__author">
+                        <div class="highlight">
                             <?php the_author_posts_link(); ?>
                         </div>
                         <div class="post__excerpt">

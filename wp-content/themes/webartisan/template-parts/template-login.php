@@ -43,8 +43,8 @@ get_header();
                     </div>
 
                     <div class="other__link">
-                        <a href="<?= wa_get_page_url('template-register.php') ;?>">Me créer un compte</a>
-                        <a href="<?= wp_lostpassword_url(); ?>">Mot de passe oublié !</a>
+                        <a class="highlight" href="<?= wa_get_page_url('template-register.php') ;?>">Me créer un compte</a>
+                        <a class="highlight" href="<?= wp_lostpassword_url(); ?>">Mot de passe oublié !</a>
                     </div>
                 </div>
             </div>

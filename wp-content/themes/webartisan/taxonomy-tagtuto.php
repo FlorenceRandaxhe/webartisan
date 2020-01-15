@@ -20,10 +20,10 @@ get_header();
                         <h3 aria-level="3" role="heading" class="tuto__title">
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         </h3>
-                        <div class="post__author">
+                        <div class="highlight">
                             <?php the_author_posts_link(); ?>
                         </div>
-                        <p><time datetime="c" class="post__date"><?= get_the_date() ?></time></p>
+                        <p class="tuto__date"><time datetime="c" class="post__date"><?= get_the_date() ?></time></p>
                         <div class="tuto__excerpt">
                             <p>
                                 <?php the_excerpt(); ?>

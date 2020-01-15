@@ -1,10 +1,10 @@
 <?php
 /**
- * meta description
+ * description
  */
 function meta_description()
 {
-    if (is_page_template() || is_single()) {
+    if (is_page_template() || is_singular( array('articles', 'tutoriels') )) {
         return the_field('description');
     }
     elseif (is_search()) {
@@ -16,11 +16,11 @@ function meta_description()
 }
 
 /**
- * meta keywords
+ * keywords
  */
 function meta_keyword()
 {
-    if (is_page_template() || is_single()) {
+    if (is_page_template() || is_singular( array('articles', 'tutoriels')) ){
         return the_field('keywords');
     } 
     else {

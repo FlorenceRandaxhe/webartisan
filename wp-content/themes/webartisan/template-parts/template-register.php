@@ -65,7 +65,9 @@ get_header();
                     </form>
 
                     <div class="other__link">
-                       <a href="<?= wa_get_page_url('template-login.php') ;?>">Me connecter</a>
+                        <p>
+                            Déjà un compte&nbsp;? <a class="highlight" href="<?= wa_get_page_url('template-login.php') ;?>">Me connecter</a>     
+                        </p>
                     </div>
                 </div>
             </div>

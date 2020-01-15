@@ -4,14 +4,17 @@
   display: flex;
   align-items: center;
   margin-top: 1.5em;
-  &__list__item{
-    text-transform: uppercase;
-    font-size: 14px;
-    color:#3e3e3e;
-    display: inline-block;
-    padding: 0 0.5em;
-    a{
-      margin: 0 0.5em;
+}
+.tags__list__item{
+  text-transform: uppercase;
+  font-size: 14px;
+  color:#3e3e3e;
+  display: inline-block;
+  padding: 0 0.5em;
+  a{
+    margin: 0 0.5em;
+    &:hover{
+      border-bottom: 1px solid #3e3e3e;
     }
   }
 }
