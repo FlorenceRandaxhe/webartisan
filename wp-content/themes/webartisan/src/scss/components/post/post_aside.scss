@@ -1,16 +1,6 @@
 // aside
-.aside__container{
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-
-  @include mq('tablet-wide'){
-    flex-direction: column;
-  }
-}
 .aside__content{
-  max-width: 150px;
+  max-width: 300px;
   margin-top: 1.5em;
   margin-right: 1em;
   @include mq('tablet-wide'){

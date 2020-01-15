@@ -57,13 +57,13 @@
     }
     &:hover {
       &::after {
-        height: 60%;
-        width: 105%;
+        height: 105%;
+        width: 102%;
       }
     }
   }
   blockquote{
-    background-color: #caf2d8;
+    background-color: #99c1d080;
     border-radius: 3px;
     font-style: italic;
     padding:1em 2em 0;

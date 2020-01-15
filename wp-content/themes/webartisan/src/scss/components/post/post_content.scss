@@ -2,7 +2,7 @@
 .section__single__post{
   @include wrapper(1250px, 0);
   .post__flex{
-    @include mq('tablet-wide'){
+    @include mq('desktop-small'){
       display: flex;
       justify-content: space-between;
     }

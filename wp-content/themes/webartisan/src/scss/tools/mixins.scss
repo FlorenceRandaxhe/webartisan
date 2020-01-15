@@ -80,6 +80,7 @@ $breakpoints: (
     "tablet-small": 640px,
     "tablet":       768px,
     "tablet-wide":  1024px,
+    "desktop-small":1100px,
     "desktop":      1248px,
     "desktop-wide": 1440px,
     "mega-wide":    1700px
@@ -103,5 +104,4 @@ $breakpoints: (
   overflow: hidden;
   border-radius: 0; 
   max-width: 100%; 
-  outline: none; 
 }

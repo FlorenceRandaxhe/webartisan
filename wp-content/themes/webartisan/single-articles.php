@@ -105,7 +105,6 @@ get_header();
                                 </div>
                             </article>
                         <?php endwhile; ?>
-                            <a class="aside__link" href="<?= wa_get_page_url('template-blog.php') ?>">Tous les derniers articles</a>
                         <?php endif; ?>
                         </div>
                     </aside>
@@ -141,7 +140,6 @@ get_header();
                                 </div>
                             </article>
                             <?php endwhile; ?>
-                            <a class="aside__link" href="<?= get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">Tous les articles du même auteur</a>
                             <?php endif; ?>
                         </div>
                     </aside>
@@ -181,8 +179,6 @@ get_header();
                                 </div>
                             </article>
                         <?php endwhile;?>
-
-                            <a class="aside__link" href="<?= get_term_link( $slug, 'categorypost' ); ?>">Tous les articles de la même catégorie</a>
                             <?php endif; ?>
                         </div>
                     </aside>

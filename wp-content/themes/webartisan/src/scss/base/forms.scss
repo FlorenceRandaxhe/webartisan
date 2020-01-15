@@ -10,7 +10,6 @@ input, select{
   transition:0.3s;
   &:focus{
     background-color: rgba(255, 255, 255, 0.25);
-    outline: none;
   }
 }
 legend{
@@ -24,7 +23,6 @@ textarea{
   font-family: $worksans;
   border-radius: 3px;
   &:focus{
-    outline: none;
     background-color: #f2f4f9;
   }
 }
@@ -55,7 +53,8 @@ input[type='text'],
 input[type='email'],
 input[type='password'],
 input[type='search'],
-input[type='image'] {
+input[type='image'],
+textarea {
   @include input-placeholder;
   @include reset-input-styles;
 }

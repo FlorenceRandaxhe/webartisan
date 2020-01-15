@@ -276,7 +276,6 @@ input, select {
 }
 input:focus, select:focus {
   background-color: rgba(255, 255, 255, 0.25);
-  outline: none;
 }
 
 legend {
@@ -292,7 +291,6 @@ textarea {
   border-radius: 3px;
 }
 textarea:focus {
-  outline: none;
   background-color: #f2f4f9;
 }
 
@@ -374,13 +372,13 @@ input[type=text],
 input[type=email],
 input[type=password],
 input[type=search],
-input[type=image] {
+input[type=image],
+textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   overflow: hidden;
   border-radius: 0;
   max-width: 100%;
-  outline: none;
 }
 /*********** OBJECTS *************/
 @media only screen and (min-width: 1024px) {
@@ -1234,7 +1232,7 @@ footer:before {
   max-width: 1250px;
   margin: 0 auto;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1100px) {
   .section__single__post .post__flex {
     display: flex;
     justify-content: space-between;
@@ -1244,20 +1242,8 @@ footer:before {
   flex: 2;
 }
 
-.aside__container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-@media only screen and (min-width: 1024px) {
-  .aside__container {
-    flex-direction: column;
-  }
-}
-
 .aside__content {
-  max-width: 150px;
+  max-width: 300px;
   margin-top: 1.5em;
   margin-right: 1em;
 }
@@ -2327,11 +2313,11 @@ aside:last-of-type {
   transition: all 250ms;
 }
 .single__post__content a:hover::after, .single__tuto__content a:hover::after {
-  height: 60%;
-  width: 105%;
+  height: 105%;
+  width: 102%;
 }
 .single__post__content blockquote, .single__tuto__content blockquote {
-  background-color: #caf2d8;
+  background-color: #99c1d080;
   border-radius: 3px;
   font-style: italic;
   padding: 1em 2em 0;
@@ -2670,6 +2656,7 @@ div.padd .line {
 }
 
 .hero__illu {
+  margin-left: 20px;
   margin-right: 50px;
 }
 
