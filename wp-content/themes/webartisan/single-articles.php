@@ -74,7 +74,7 @@ get_header();
                 </div>
 
                 <div class="post__aside">
-                    <aside>
+                    
                         <?php
                         $latest = new WP_Query( [
                             'post_type'         => 'articles',
@@ -84,6 +84,7 @@ get_header();
                             'post__not_in'      => array ( $currentId ),
                         ] );
                         if ($latest->have_posts()) :?>
+                        <aside>
                         <h2 aria-level="2" role="heading" class="aside__title">Les derniers articles</h2>
                         <div class="aside__container">
                             <?php while ($latest->have_posts()) : $latest->the_post(); ?>
@@ -105,10 +106,11 @@ get_header();
                                 </div>
                             </article>
                         <?php endwhile; ?>
-                        <?php endif; ?>
                         </div>
                     </aside>
-                    <aside>
+                        <?php endif; ?>
+                        
+                   
                         <?php
                         $author = new WP_Query( [
                             'author'            => get_the_author_meta( 'ID' ),
@@ -119,6 +121,7 @@ get_header();
                             'post__not_in'      => array ( $currentId ),
                         ] );
                         if ($author->have_posts()) :?>
+                    <aside>
                         <h2 aria-level="2" role="heading" class="aside__title">Du même auteur</h2>
                         <div class="aside__container">
                             <?php while ($author->have_posts()) : $author->the_post(); ?>
@@ -140,10 +143,11 @@ get_header();
                                 </div>
                             </article>
                             <?php endwhile; ?>
-                            <?php endif; ?>
-                        </div>
+
+                    </div>
                     </aside>
-                    <aside>
+                            <?php endif; ?>
+                   
                         <?php
                         $cat = new WP_Query( [
                             'post_type'         => 'articles',
@@ -158,6 +162,8 @@ get_header();
                             ),
                         ] );
                         if ($cat->have_posts()) :?>
+
+                    <aside>
                         <h2 aria-level="2" role="heading" class="aside__title">De la même catégorie</h2>
                         <div class="aside__container">
                         <?php while ($cat->have_posts()) : $cat->the_post(); ?>
@@ -179,9 +185,10 @@ get_header();
                                 </div>
                             </article>
                         <?php endwhile;?>
-                            <?php endif; ?>
                         </div>
                     </aside>
+                            <?php endif; ?>
+                        
                 </div>
             </div>
         </div>

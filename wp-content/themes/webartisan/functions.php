@@ -96,7 +96,7 @@ add_filter( 'show_admin_bar' , 'wa_show_admin_bar' );
  *
  */
 function custom_new_gravatar ($avatar_defaults) {
-    $avatar = 'http://localhost/web_artisan/wp-content/uploads/2019/12/default-gravatar.jpg';
+    $avatar = 'https://webartisan.florence-randaxhe.com/wp-content/uploads/2019/12/default-gravatar.jpg';
     $avatar_defaults[$avatar] = "Custom Gravatar";
     return $avatar_defaults;
 }

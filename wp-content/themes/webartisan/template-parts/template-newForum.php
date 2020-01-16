@@ -39,14 +39,28 @@ get_header();
                                 </fieldset>
                             </div>
                             <div class="c">
+
                                 <?php if($forumForm->errors['message_forum']): ?>
                                     <div>
                                         <p class="section__info--alert"><?= $forumForm->errors['message_forum'];?></p>
                                     </div>
                                 <?php endif; ?>
                                 <label for="message_forum" class="form__label form__label--block">Message</label>
+                                 <div>
+                                    <p>Coloration syntaxique&nbsp;:</p>
+                                    <div>
+                                        <button type="button" class="button--code" onclick="insertText('message_forum', '[code]…[/code]');">code</button>
+                                        <button type="button" class="button--code" onclick="insertText('message_forum', '[code=html]…[/code]');">html</button>
+                                        <button type="button" class="button--code" onclick="insertText('message_forum', '[code=css]…[/code]');">css</button>
+                                        <button type="button" class="button--code" onclick="insertText('message_forum', '[code=javascript]…[/code]');">javacript</button>
+                                        <button type="button" class="button--code" onclick="insertText('message_forum', '[code=php]…[/code]');">php</button>
+                                        <button type="button" class="button--code" onclick="insertText('message_forum', '[code=sql]…[/code]');">sql</button>
+                                    </div>
+                                </div>
                                 <textarea name="message_forum" id="message_forum" class="input--wide" cols="30" rows="10"></textarea>
+
                             </div>
+
                             <div>
                                 <button class="button--blue">Poster une question</button>
                             </div>
@@ -55,7 +69,7 @@ get_header();
                 <?php endif;?>
                 <?php if( ! is_user_logged_in()):?>
                     <div class="section__info section__info--alert">
-                        <p>Vous devez êter connecté pour poser une question</p>
+                        <p>Vous devez être connecté pour poser une question</p>
                     </div>
                     <div>
                         <div class="login__form">
@@ -73,3 +87,9 @@ get_header();
     </main>
     <footer class="skew--pink">
 <?php get_footer();?>
+
+<script type="text/javascript">
+    function insertText(elemID, text) {
+        const elem = document.getElementById(elemID);
+        elem.value += text;}
+</script>
